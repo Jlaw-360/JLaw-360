@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <!-- JL Monogram -->
+  <g stroke="#D4AF37" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- J vertical -->
+    <path d="M130 30 L130 170 Q130 210 100 210 Q70 210 70 180"/>
+    <!-- L vertical -->
+    <path d="M170 30 L170 210"/>
+    <!-- L horizontal -->
+    <path d="M170 210 L250 210"/>
+    <!-- L bracket top -->
+    <path d="M250 30 L250 210"/>
+  </g>
+  <!-- JLAW 360 Text -->
+  <text x="200" y="268" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" letter-spacing="6" fill="#D4AF37">JLAW 360</text>
+  <!-- MARKETING Text -->
+  <text x="200" y="302" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="400" letter-spacing="12" fill="#D4AF37">MARKETING</text>
+</svg>
