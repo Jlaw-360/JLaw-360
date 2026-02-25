@@ -1,112 +1,98 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "Process", href: "#process" },
-    { label: "Services", href: "#offers" },
-    { label: "Authority", href: "#authority" },
-    { label: "About", href: "#about" },
-];
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const navLinks = [
+        { name: "Home", href: "/" },
+        { name: "Services", href: "#services" },
+        { name: "About", href: "#about" },
+        { name: "Niches", href: "#niches" },
+    ];
+
     return (
         <motion.nav
-            initial={{ y: -80 }}
+            initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? "bg-black/90 backdrop-blur-lg border-b border-gold/10 shadow-lg"
-                : "bg-transparent"
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+                ? "bg-[var(--color-navy)]/90 backdrop-blur-md border-b border-[var(--color-teal-dark)] py-4"
+                : "bg-transparent py-6"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <Link href="#hero" className="flex items-center gap-3 group">
-                        <img
-                            src="/logo.svg"
-                            alt="JLAW 360 Marketing"
-                            className="h-12 w-auto"
-                        />
-                    </Link>
+            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2 group">
+                    <img src="/logo.png" alt="JLAW 360 Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-md" />
+                </Link>
 
-                    {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.label}
-                                href={link.href}
-                                className="text-sm font-medium text-gray-300 hover:text-gold transition-colors duration-200 relative group"
-                            >
-                                {link.label}
-                                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
-                            </Link>
-                        ))}
+                {/* Desktop Nav */}
+                <div className="hidden lg:flex items-center gap-8">
+                    {navLinks.map((link) => (
                         <Link
-                            href="#hero"
-                            className="ml-4 px-6 py-2.5 bg-gold text-black font-semibold text-sm rounded-lg hover:bg-gold-light transition-all duration-200 hover:shadow-lg hover:shadow-gold/20"
+                            key={link.name}
+                            href={link.href}
+                            className="text-sm font-semibold text-gray-300 hover:text-[var(--color-gold)] transition"
                         >
-                            Book My Strategy Session
+                            {link.name}
                         </Link>
+                    ))}
+                    <div className="flex items-center gap-3 text-sm font-bold border border-[var(--color-teal-dark)] bg-black/40 rounded-full px-4 py-1.5 shadow-inner">
+                        <Link href="/" className="text-[var(--color-gold)] hover:text-[var(--color-sand)] transition drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]">EN</Link>
+                        <span className="text-gray-600">|</span>
+                        <Link href="/fr" className="text-gray-400 hover:text-white transition">FR</Link>
                     </div>
-
-                    {/* Mobile Hamburger */}
-                    <button
-                        className="md:hidden text-white p-2"
-                        onClick={() => setIsOpen(!isOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    <button className="px-6 py-2.5 bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-gold-muted)] text-[var(--color-navy)] text-sm font-bold rounded hover:opacity-90 transition shadow-[0_0_15px_rgba(212,182,115,0.2)]">
+                        Free Audit
                     </button>
                 </div>
+
+                {/* Mobile Toggle */}
+                <button
+                    className="lg:hidden text-white"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
             </div>
 
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="md:hidden bg-black/95 backdrop-blur-xl border-t border-gold/10"
-                    >
-                        <div className="px-4 py-6 space-y-4">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="block text-base font-medium text-gray-300 hover:text-gold transition-colors py-2"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                            <Link
-                                href="#hero"
-                                onClick={() => setIsOpen(false)}
-                                className="block w-full text-center px-6 py-3 bg-gold text-black font-semibold rounded-lg mt-4"
-                            >
-                                Book My Strategy Session
-                            </Link>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/* Mobile Nav */}
+            {isMobileMenuOpen && (
+                <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--color-navy)] border-b border-gray-800 py-4 px-6 flex flex-col gap-4 shadow-2xl">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="text-lg font-semibold text-white py-2 border-b border-gray-800/50"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                    <div className="flex items-center gap-4 py-2 border-b border-gray-800/50">
+                        <Link href="/" className="text-xl font-bold text-[var(--color-gold)] drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]">EN</Link>
+                        <span className="text-gray-600">|</span>
+                        <Link href="/fr" className="text-xl font-bold text-gray-400">FR</Link>
+                    </div>
+                    <button className="w-full mt-4 px-6 py-3 bg-[var(--color-gold)] text-[var(--color-navy)] font-bold rounded">
+                        Get Your Free Audit
+                    </button>
+                </div>
+            )}
         </motion.nav>
     );
 }

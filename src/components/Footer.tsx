@@ -1,127 +1,63 @@
-"use client";
-
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
-
-const footerLinks = [
-    {
-        title: "Services",
-        links: [
-            { label: "Sales Funnels", href: "#offers" },
-            { label: "AI Automation", href: "#process" },
-            { label: "Brand Strategy", href: "#offers" },
-            { label: "Lead Generation", href: "#process" },
-        ],
-    },
-    {
-        title: "Company",
-        links: [
-            { label: "About", href: "#about" },
-            { label: "Portfolio", href: "#authority" },
-            { label: "Process", href: "#process" },
-            { label: "Contact", href: "#hero" },
-        ],
-    },
-];
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="relative border-t border-gray-800">
-            {/* CTA Banner */}
-            <div className="bg-gradient-to-r from-teal-dark via-teal to-teal-dark">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
-                        Ready to Build Your{" "}
-                        <span className="gold-gradient-text">360° Ecosystem?</span>
-                    </h2>
-                    <p className="text-gray-300 max-w-xl mx-auto mb-8 text-lg">
-                        Stop leaving money on the table. Book your free strategy session and
-                        see how we can transform your business in 90 days.
-                    </p>
-                    <Link
-                        href="#hero"
-                        className="inline-flex items-center gap-2 px-10 py-4 bg-gold text-black font-bold text-base rounded-xl hover:bg-gold-light transition-all duration-300 hover:shadow-xl hover:shadow-gold/25"
-                    >
-                        Book My Free Strategy Session
+        <footer className="bg-[#0B1A22] text-white pt-24 pb-8 px-6 border-t border-gray-900 mt-20">
+            <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+
+                {/* Brand */}
+                <div className="md:col-span-1">
+                    <Link href="/" className="inline-block mb-6">
+                        <img src="/logo.png" alt="JLAW 360 Logo" className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition" />
                     </Link>
+                    <p className="text-gray-400 text-sm mb-6 max-w-xs">
+                        The Canadian Productivity Gap Solution. We deploy AI agents, bilingual SEO architecture, and automated growth systems for high-ticket industries.
+                    </p>
+                    <div className="text-sm font-bold text-[var(--color-gold)]">
+                        Montreal • Toronto • Ottawa
+                    </div>
+                </div>
+
+                {/* Niche Solutions */}
+                <div>
+                    <h4 className="text-lg font-bold mb-6 text-white tracking-wide">Elite Niches</h4>
+                    <ul className="space-y-4 text-sm text-gray-400">
+                        <li><Link href="/law-firms" className="hover:text-[var(--color-teal)] transition">Law Firms & Attorneys</Link></li>
+                        <li><Link href="/hvac-trades" className="hover:text-[var(--color-teal)] transition">HVAC & Residential Trades</Link></li>
+                        <li><Link href="/real-estate" className="hover:text-[var(--color-teal)] transition">Real Estate & Property Mgmt</Link></li>
+                        <li><Link href="/manufacturing-b2b" className="hover:text-[var(--color-teal)] transition">Manufacturing B2B</Link></li>
+                    </ul>
+                </div>
+
+                {/* Services */}
+                <div>
+                    <h4 className="text-lg font-bold mb-6 text-white tracking-wide">Digital Architecture</h4>
+                    <ul className="space-y-4 text-sm text-gray-400">
+                        <li className="hover:text-white transition cursor-pointer">Bilingual SEO & GEO</li>
+                        <li className="hover:text-white transition cursor-pointer">AI Support & Dispatch Bots</li>
+                        <li className="hover:text-white transition cursor-pointer">Digital Blueprint Strategy</li>
+                        <li className="hover:text-white transition cursor-pointer">Performance Meta/Google Ads</li>
+                        <li className="hover:text-white transition cursor-pointer">Automated CRM Integrations</li>
+                    </ul>
+                </div>
+
+                {/* CTA */}
+                <div>
+                    <h4 className="text-lg font-bold mb-6 text-white tracking-wide">Start the Transformation</h4>
+                    <p className="text-sm text-gray-400 mb-6">Stop losing revenue to outdated systems. Get a visual breakdown of where your funnel is leaking.</p>
+                    <button className="w-full px-6 py-3 bg-[var(--color-teal-dark)] border border-[var(--color-teal)] text-white font-bold rounded hover:bg-[var(--color-teal)] transition flex items-center justify-center gap-2">
+                        Free 15-Min System Audit <ArrowRight size={16} />
+                    </button>
                 </div>
             </div>
 
-            {/* Footer Content */}
-            <div className="bg-black-soft">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-                        {/* Brand */}
-                        <div className="md:col-span-2">
-                            <img
-                                src="/logo.svg"
-                                alt="JLAW 360 Marketing"
-                                className="h-12 w-auto mb-4"
-                            />
-                            <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-                                We help Montreal businesses scale with high-converting funnels,
-                                AI automation, and omnipresent marketing strategies. Your 360°
-                                growth partner.
-                            </p>
-                            <div className="mt-6 space-y-2">
-                                <div className="flex items-center gap-2 text-sm text-gray-500">
-                                    <MapPin size={14} className="text-gold shrink-0" />
-                                    Montreal, QC, Canada
-                                </div>
-                                <div className="flex items-center gap-2 text-sm text-gray-500">
-                                    <Mail size={14} className="text-gold shrink-0" />
-                                    hello@jlaw360.com
-                                </div>
-                                <div className="flex items-center gap-2 text-sm text-gray-500">
-                                    <Phone size={14} className="text-gold shrink-0" />
-                                    (514) 555-0360
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Links */}
-                        {footerLinks.map((group, i) => (
-                            <div key={i}>
-                                <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                                    {group.title}
-                                </h4>
-                                <ul className="space-y-3">
-                                    {group.links.map((link, j) => (
-                                        <li key={j}>
-                                            <Link
-                                                href={link.href}
-                                                className="text-sm text-gray-500 hover:text-gold transition-colors duration-200"
-                                            >
-                                                {link.label}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Bottom bar */}
-                    <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <p className="text-xs text-gray-600">
-                            © {new Date().getFullYear()} JLAW 360 Marketing. All rights
-                            reserved.
-                        </p>
-                        <div className="flex gap-6">
-                            <Link
-                                href="#"
-                                className="text-xs text-gray-600 hover:text-gold transition-colors"
-                            >
-                                Privacy Policy
-                            </Link>
-                            <Link
-                                href="#"
-                                className="text-xs text-gray-600 hover:text-gold transition-colors"
-                            >
-                                Terms of Service
-                            </Link>
-                        </div>
-                    </div>
+            <div className="max-w-7xl mx-auto border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>© 2026 JLAW 360 Marketing. All rights reserved.</p>
+                <div className="flex gap-6">
+                    <span className="hover:text-white transition cursor-pointer">Privacy Policy (Bill 25 Compliant)</span>
+                    <span className="hover:text-white transition cursor-pointer">Terms of Service</span>
+                    <span className="hover:text-white transition cursor-pointer">EN / FR</span>
                 </div>
             </div>
         </footer>
