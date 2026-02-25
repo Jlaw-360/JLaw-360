@@ -55,9 +55,13 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
                 <p>© 2026 JLAW 360 Marketing. All rights reserved.</p>
                 <div className="flex gap-6">
-                    <span className="hover:text-white transition cursor-pointer">Privacy Policy (Bill 25 Compliant)</span>
-                    <span className="hover:text-white transition cursor-pointer">Terms of Service</span>
-                    <span className="hover:text-white transition cursor-pointer">EN / FR</span>
+                    <Link href="/privacy-policy" className="hover:text-white transition cursor-pointer">Privacy Policy (Bill 25 Compliant)</Link>
+                    <Link href="/terms-of-service" className="hover:text-white transition cursor-pointer">Terms of Service</Link>
+                    <div className="flex items-center gap-2 cursor-pointer group">
+                        <span className="text-[var(--color-gold)] font-bold group-hover:text-white transition">EN</span>
+                        <span className="text-gray-700">/</span>
+                        <Link href="/fr" className="text-gray-500 group-hover:text-white transition font-medium">FR</Link>
+                    </div>
                 </div>
             </div>
         </footer>
