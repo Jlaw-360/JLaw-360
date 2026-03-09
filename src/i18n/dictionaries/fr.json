@@ -1,0 +1,107 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À Propos",
+    "niches": "Niches",
+    "portal": "Portail",
+    "audit_btn": "Audit Gratuit"
+  },
+  "hero": {
+    "badge": "Protocole 2026 Actif",
+    "headline_1": "Cessez de Perdre",
+    "headline_highlight": "Vos Clients",
+    "headline_3": "à Cause d'une Présence Invisible.",
+    "description": "Arrêtez de perdre des prospects à cause d'une présence en ligne invisible. JLAW 360 construit le pont entre votre produit et vos profits avec des tunnels de vente de pointe, un SEO bilingue et des automatisations IA.",
+    "cta_primary": "Réserver Mon Audit Stratégique",
+    "cta_secondary": "Voir Comment Ça Marche",
+    "stat_funnels": "Tunnels Déployés",
+    "stat_revenue": "Générés pour nos Clients",
+    "stat_retention": "Taux de Rétention Client"
+  },
+  "footer": {
+    "description": "La solution au déficit de productivité canadien. Nous déployons des agents IA, une architecture SEO bilingue et des systèmes de croissance automatisés.",
+    "locations": "Montréal • Toronto • Ottawa",
+    "niches_title": "Niches d'Élite",
+    "services_title": "Architecture Digitale",
+    "cta_title": "Commencez la Transformation",
+    "cta_desc": "Arrêtez de perdre des revenus à cause de systèmes obsolètes. Obtenez une analyse détaillée de votre tunnel actuel.",
+    "cta_btn": "Audit Système de 15-Min",
+    "copyright": "© 2026 JLAW 360 Marketing. Tous droits réservés."
+  },
+  "about": {
+    "badge": "Opération JLAW 360",
+    "title_1": "L'Agence de Croissance",
+    "title_highlight": "Nouvelle Génération",
+    "description_1": "Fondée par Walkens, JLAW 360 est née d'une frustration : trop d'agences promettent du trafic, aucune ne garantit des revenus. Nous ne sommes pas des créateurs de sites web ordinaires. Nous sommes des ingénieurs en conversion.",
+    "description_2": "Nous combinons le développement technique de pointe (Next.js, React), des algorithmes d'intelligence artificielle, et une expertise SEO bilingue (EN/FR) pour dominer les marchés locaux de Montréal et d'ailleurs.",
+    "cta_primary": "Découvrir l'Architecture",
+    "cta_secondary": "Parler au Fondateur",
+    "years_exp_1": "Années d'Expertise",
+    "years_exp_2": "Stratégique",
+    "difference_title": "La Différence",
+    "difference_highlight": "JLAW 360",
+    "difference_desc": "Pourquoi nos clients quittent leurs anciennes agences pour nos infrastructures technologiques.",
+    "pillars": [
+      {
+        "title": "Transparence Data",
+        "description": "Fini les rapports de 'j'aime' et de 'vues'. Nous mesurons le ROAS (Retour sur Investissement Publicitaire) et le coût d'acquisition de chaque client."
+      },
+      {
+        "title": "Technologie Propriétaire",
+        "description": "Nous construisons des systèmes sur React & Next.js, offrant des vitesses de chargement qui détruisent la compétition et convertissent mieux."
+      },
+      {
+        "title": "Domination Bilingue",
+        "description": "Notre maîtrise du SEO local pour les marchés francophones et anglophones vous offre une portée maximale au Québec et au-delà."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Solutions Technologiques",
+    "title_1": "Services &",
+    "title_highlight": "Expertise",
+    "subtitle": "Nous ne vendons pas de simples services. Nous construisons des infrastructures d'acquisition de clients prévisibles pour dominer votre marché.",
+    "services_list": [
+      {
+        "title": "Génération de Leads Automatisée",
+        "description": "Nous déployons des tunnels d'acquisition qui filtrent, qualifient et convertissent vos visiteurs en prospects chauds d'une manière entièrement automatisée.",
+        "features": [
+          "Landing Pages Haut-De-Gamme",
+          "Lead Magnets Irrésistibles",
+          "CRM & Suivi en Temps Réel"
+        ]
+      },
+      {
+        "title": "Publicité Meta & Google Ads",
+        "description": "Optimisation algorithmique de votre budget publicitaire pour cibler avec une précision laser les clients prêts à acheter dans votre zone géographique.",
+        "features": [
+          "Ciblage Hyper-Local (Montréal & Environs)",
+          "Retargeting Dynamique",
+          "Suivi du ROAS en Direct"
+        ]
+      },
+      {
+        "title": "SEO Futuriste & Présence Locale",
+        "description": "Dominez les recherches Google dans votre niche. Nous structurons votre site et votre fiche Google My Business pour être le #1 de votre région.",
+        "features": [
+          "Audit Technique Complet",
+          "Bilinguisme Optimisé (FR/EN)",
+          "Référencement Automatisé"
+        ]
+      },
+      {
+        "title": "Écosystème CRM & AI Chatbots",
+        "description": "Arrêtez de perdre des ventes. Nous intégrons des agents IA qui répondent 24/7 et qualifient vos leads directement dans votre calendrier.",
+        "features": [
+          "Chatbots Conversationnels",
+          "Workflows SMS/Email",
+          "Intégration GoHighLevel"
+        ]
+      }
+    ],
+    "cta_title": "Prêt à dominer votre marché ?",
+    "cta_subtitle": "Réservez un audit complet de votre écosystème actuel (Valeur: 500$ - Offert).",
+    "cta_btn": "Demander Mon Audit"
+  }
+}

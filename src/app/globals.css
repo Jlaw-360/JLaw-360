@@ -167,6 +167,41 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* ---- Futuristic Cyber Upgrades ---- */
+.cyber-glass {
+  background: rgba(8, 18, 24, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(39, 126, 149, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(39, 126, 149, 0.05);
+}
+
+.cyber-glass-gold {
+  background: rgba(8, 18, 24, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(205, 166, 81, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(205, 166, 81, 0.1);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(39, 126, 149, 0.2); }
+  50% { box-shadow: 0 0 80px rgba(39, 126, 149, 0.6); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
 @keyframes float-slow {
   0% {
     transform: translateY(0px) rotate(0deg);

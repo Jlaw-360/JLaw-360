@@ -1,0 +1,107 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "niches": "Niches",
+    "portal": "Portal",
+    "audit_btn": "Free Audit"
+  },
+  "hero": {
+    "badge": "Protocol 2026 Active",
+    "headline_1": "Stop Losing Leads",
+    "headline_highlight": "to an Invisible",
+    "headline_3": "Online Presence.",
+    "description": "Stop losing leads to an invisible online presence. JLAW 360 builds the bridge between your product and your profit with cutting-edge funnels, bilingual SEO, and AI automations.",
+    "cta_primary": "Book My Strategy Session",
+    "cta_secondary": "See How It Works",
+    "stat_funnels": "Funnels Deployed",
+    "stat_revenue": "Generated for Clients",
+    "stat_retention": "Client Retention Rate"
+  },
+  "footer": {
+    "description": "The Canadian Productivity Gap Solution. We deploy AI agents, bilingual SEO architecture, and automated growth systems.",
+    "locations": "Montreal • Toronto • Ottawa",
+    "niches_title": "Elite Niches",
+    "services_title": "Digital Architecture",
+    "cta_title": "Start the Transformation",
+    "cta_desc": "Stop losing revenue to outdated systems. Get a visual breakdown of where your funnel is leaking.",
+    "cta_btn": "15-Min System Audit",
+    "copyright": "© 2026 JLAW 360 Marketing. All rights reserved."
+  },
+  "about": {
+    "badge": "Operation JLAW 360",
+    "title_1": "The Next Generation",
+    "title_highlight": "Growth Agency",
+    "description_1": "Founded by Walkens, JLAW 360 was born out of frustration: too many agencies promise traffic, but none guarantee revenue. We are not ordinary web developers. We are conversion engineers.",
+    "description_2": "We combine cutting-edge technical development (Next.js, React), artificial intelligence algorithms, and bilingual SEO expertise (EN/FR) to dominate local markets in Montreal and beyond.",
+    "cta_primary": "Discover the Architecture",
+    "cta_secondary": "Speak to the Founder",
+    "years_exp_1": "Years of Strategic",
+    "years_exp_2": "Expertise",
+    "difference_title": "The JLAW 360",
+    "difference_highlight": "Difference",
+    "difference_desc": "Why our clients leave their old agencies for our technological infrastructures.",
+    "pillars": [
+      {
+        "title": "Data Transparency",
+        "description": "No more reports about 'likes' and 'views'. We measure the ROAS (Return on Ad Spend) and the acquisition cost of each client."
+      },
+      {
+        "title": "Proprietary Technology",
+        "description": "We build systems on React & Next.js, offering load speeds that destroy the competition and convert better."
+      },
+      {
+        "title": "Bilingual Domination",
+        "description": "Our mastery of local SEO for French and English markets offers you maximum reach in Quebec and beyond."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Technological Solutions",
+    "title_1": "Services &",
+    "title_highlight": "Expertise",
+    "subtitle": "We don't just sell services. We build predictable client acquisition infrastructures to dominate your market.",
+    "services_list": [
+      {
+        "title": "Automated Lead Generation",
+        "description": "We deploy acquisition funnels that filter, qualify, and convert your visitors into hot prospects in a fully automated way.",
+        "features": [
+          "High-End Landing Pages",
+          "Irresistible Lead Magnets",
+          "Real-Time CRM & Tracking"
+        ]
+      },
+      {
+        "title": "Meta & Google Ads",
+        "description": "Algorithmic optimization of your ad budget to target clients ready to buy in your geographic area with laser precision.",
+        "features": [
+          "Hyper-Local Targeting (Montreal & Surrounding)",
+          "Dynamic Retargeting",
+          "Live ROAS Tracking"
+        ]
+      },
+      {
+        "title": "Futuristic SEO & Local Presence",
+        "description": "Dominate Google searches in your niche. We structure your site and Google My Business profile to be #1 in your region.",
+        "features": [
+          "Complete Technical Audit",
+          "Optimized Bilingualism (FR/EN)",
+          "Automated Ranking"
+        ]
+      },
+      {
+        "title": "CRM Ecosystem & AI Chatbots",
+        "description": "Stop losing sales. We integrate AI agents that answer 24/7 and qualify your leads directly into your calendar.",
+        "features": [
+          "Conversational Chatbots",
+          "SMS/Email Workflows",
+          "GoHighLevel Integration"
+        ]
+      }
+    ],
+    "cta_title": "Ready to dominate your market?",
+    "cta_subtitle": "Book a complete audit of your current ecosystem (Value: $500 - Offered).",
+    "cta_btn": "Request My Audit"
+  }
+}

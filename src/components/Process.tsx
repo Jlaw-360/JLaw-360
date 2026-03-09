@@ -1,168 +1,152 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Target, Cpu, Globe } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Target, Cpu, LineChart, Server } from "lucide-react";
 
 const phases = [
-    {
-        icon: Target,
-        phase: "Phase 1",
-        title: "Capture",
-        description:
-            "High-converting landing pages and sales funnels that turn visitors into leads. We design every touchpoint to maximize conversions.",
-        features: [
-            "Custom landing pages",
-            "Lead capture forms",
-            "A/B split testing",
-            "ClickFunnels mastery",
-        ],
-    },
-    {
-        icon: Cpu,
-        phase: "Phase 2",
-        title: "Automate",
-        description:
-            "AI-driven follow-ups, email sequences, and CRM systems that nurture leads 24/7 — so you never miss a sale.",
-        features: [
-            "AI chatbot integration",
-            "Email & SMS sequences",
-            "CRM pipeline setup",
-            "GoHighLevel automation",
-        ],
-    },
-    {
-        icon: Globe,
-        phase: "Phase 3",
-        title: "Dominate",
-        description:
-            "Omnipresent ads, SEO, and social media strategies so your brand is seen everywhere your customers look.",
-        features: [
-            "Meta & Google Ads",
-            "SEO optimization",
-            "Social media strategy",
-            "Retargeting campaigns",
-        ],
-    },
+  {
+    id: "01",
+    title: "Data Ingestion & Targeting",
+    desc: "We deploy advanced scraping algorithms and Meta Pixel architecture to build a hyper-targeted audience model before spending a dime.",
+    icon: Target,
+    metrics: ["10K+ Data Points", "Lookalike Modeling"],
+    color: "var(--color-gold)",
+  },
+  {
+    id: "02",
+    title: "Algorithmic Capture",
+    desc: "Traffic is routed to high-velocity conversion funnels. Dynamic copy adapts to the user's intent, maximizing the lead capture rate.",
+    icon: Server,
+    metrics: ["A/B/n Multivariate", "Dynamic Routing"],
+    color: "var(--color-teal)",
+  },
+  {
+    id: "03",
+    title: "Autonomous Nurturing",
+    desc: "AI agents take over. Inbound leads are instantly qualified via SMS/Email drips and booked directly into your sales calendar 24/7.",
+    icon: Cpu,
+    metrics: ["< 2min Lead Response", "Natural Language AI"],
+    color: "var(--color-gold)",
+  },
+  {
+    id: "04",
+    title: "Scale & Dominate",
+    desc: "Once the baseline ROAS is validated, we inject capital into the winning variants, scaling your market share exponentially.",
+    icon: LineChart,
+    metrics: ["Omnipresent Retargeting", "Predictive LTV"],
+    color: "var(--color-teal)",
+  },
 ];
 
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.2,
-        },
-    },
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] as const },
-    },
-};
-
 export default function Process() {
-    return (
-        <section id="process" className="relative py-24 sm:py-32 overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black" />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal/5 rounded-full blur-[100px]" />
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+  const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+    <section id="process" className="relative py-32 bg-[#020507] overflow-hidden" ref={containerRef}>
+      {/* Background Elements */}
+      <div className="absolute inset-0 dot-pattern opacity-20" />
+      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-[var(--color-teal)]/5 blur-[120px] rounded-full pointer-events-none" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center mb-24 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block"
+          >
+            <p className="text-[10px] font-mono text-[var(--color-teal)] uppercase tracking-[0.3em] mb-4 border border-[var(--color-teal)]/30 px-4 py-1.5 rounded-full bg-[var(--color-teal)]/10">
+              System Architecture
+            </p>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-teal)]">Growth Engine</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+              Standard agencies run "ads." We engineer a fully automated, four-stage acquisition pipeline that scales revenue predictably.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Timeline Container */}
+        <div className="relative max-w-4xl mx-auto">
+          
+          {/* Central Glowing Line (Desktop) */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-800 -translate-x-1/2 hidden md:block">
+            <motion.div 
+              className="absolute top-0 w-full bg-gradient-to-b from-[var(--color-teal)] via-[var(--color-gold)] to-[var(--color-teal)] shadow-[0_0_15px_rgba(39,126,149,0.5)]"
+              style={{ height: useTransform(pathLength, (v) => `${v * 100}%`) }}
+            />
+          </div>
+
+          <div className="space-y-12 md:space-y-24">
+            {phases.map((phase, idx) => {
+              const isEven = idx % 2 === 0;
+              const Icon = phase.icon;
+
+              return (
+                <div key={phase.id} className={`relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  {/* Timeline Node */}
+                  <div className="absolute left-4 md:left-1/2 w-12 h-12 bg-[#050A0E] border-2 border-gray-800 rounded-xl -translate-x-1/2 flex items-center justify-center z-10 shadow-2xl transition-colors duration-500 hover:border-[var(--color-gold)] hidden md:flex">
+                    <span className="text-xs font-mono font-bold text-gray-400">{phase.id}</span>
+                    {/* Glowing dot that activates on scroll */}
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-br from-[var(--color-teal)] to-[var(--color-gold)] opacity-0 rounded-xl"
+                      style={{ opacity: useTransform(pathLength, [idx * 0.25, (idx * 0.25) + 0.1], [0, 0.2]) }}
+                    />
+                  </div>
+
+                  {/* Empty space for alternating layout */}
+                  <div className="hidden md:block w-1/2" />
+
+                  {/* Content Card */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16 sm:mb-20"
-                >
-                    <span className="text-sm font-semibold text-gold uppercase tracking-widest">
-                        Our 360° Methodology
-                    </span>
-                    <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-                        Three Phases to{" "}
-                        <span className="gold-gradient-text">Total Market Domination</span>
-                    </h2>
-                    <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-lg">
-                        Our proven framework surrounds your customers at every touchpoint,
-                        turning strangers into loyal, paying clients.
-                    </p>
-                </motion.div>
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className={`w-full md:w-1/2 ${isEven ? 'md:pl-16' : 'md:pr-16'}`}
+                  >
+                    <div className="cyber-glass p-8 rounded-2xl relative group hover:border-[var(--color-gold)]/40 transition-colors duration-500 overflow-hidden">
+                      
+                      {/* Hover Gradient Sweep */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out" />
+                      
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-lg bg-black/50 border border-gray-700 flex items-center justify-center shadow-inner">
+                          <Icon size={20} className="text-white" style={{ color: phase.color }} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white tracking-tight">{phase.title}</h3>
+                      </div>
+                      
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                        {phase.desc}
+                      </p>
 
-                {/* Phase Cards */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
-                >
-                    {phases.map((phase, index) => {
-                        const Icon = phase.icon;
-                        return (
-                            <motion.div
-                                key={index}
-                                variants={cardVariants}
-                                className="group relative glass-card rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-gold/5"
-                            >
-                                {/* Phase Number */}
-                                <div className="absolute top-6 right-6 text-6xl font-black text-white/[0.03] select-none">
-                                    {String(index + 1).padStart(2, "0")}
-                                </div>
-
-                                {/* Icon */}
-                                <div className="w-14 h-14 rounded-xl bg-teal/20 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors duration-300">
-                                    <Icon
-                                        size={28}
-                                        className="text-teal group-hover:text-gold transition-colors duration-300"
-                                    />
-                                </div>
-
-                                {/* Content */}
-                                <span className="text-xs font-semibold text-gold uppercase tracking-wider">
-                                    {phase.phase}
-                                </span>
-                                <h3 className="text-2xl font-bold mt-2 mb-3">{phase.title}</h3>
-                                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                                    {phase.description}
-                                </p>
-
-                                {/* Features */}
-                                <ul className="space-y-2">
-                                    {phase.features.map((f, i) => (
-                                        <li
-                                            key={i}
-                                            className="flex items-center gap-2 text-sm text-gray-300"
-                                        >
-                                            <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                                            {f}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
-
-                {/* Connection Line (Desktop) */}
-                <div className="hidden md:flex justify-center mt-12">
-                    <div className="flex items-center gap-0">
-                        {[1, 2, 3].map((step, i) => (
-                            <div key={i} className="flex items-center">
-                                <div className="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center text-gold text-sm font-bold">
-                                    {step}
-                                </div>
-                                {i < 2 && (
-                                    <div className="w-24 lg:w-40 h-0.5 bg-gradient-to-r from-gold/60 to-gold/20" />
-                                )}
-                            </div>
+                      <div className="flex flex-wrap gap-2">
+                        {phase.metrics.map((metric, i) => (
+                          <span key={i} className="px-3 py-1.5 text-[10px] font-mono text-gray-300 border border-gray-700 rounded bg-black/30">
+                            {metric}
+                          </span>
                         ))}
+                      </div>
                     </div>
+                  </motion.div>
                 </div>
-            </div>
-        </section>
-    );
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

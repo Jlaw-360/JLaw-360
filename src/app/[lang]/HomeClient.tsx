@@ -5,6 +5,7 @@ import { ArrowRight, Bot, CheckCircle, Navigation, Network, BarChart, Calendar, 
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Aurora from "@/components/Aurora";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -19,7 +20,7 @@ const staggerContainer = {
   }
 };
 
-export default function Home() {
+export default function HomeClient({ dict, lang }: { dict: any, lang: string }) {
   const [chatStep, setChatStep] = useState(0);
 
   useEffect(() => {
@@ -39,8 +40,20 @@ export default function Home() {
     <main className="min-h-screen bg-[var(--color-navy)] text-white overflow-hidden selection:bg-[var(--color-gold)] selection:text-black">
 
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 px-6 lg:pt-48 lg:pb-32 max-w-7xl mx-auto min-h-[90vh] flex items-center">
-        {/* Floating abstract vibe elements */}
+      <section className="relative pt-32 pb-20 px-6 lg:pt-48 lg:pb-32 w-full min-h-[90vh] flex items-center border-b border-gray-900/50">
+        
+        {/* Full WebGL Aurora Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-60 mix-blend-screen">
+          <Aurora 
+            colorStops={['#0E4D55', '#D4AF37', '#03090C']}
+            amplitude={1.2}
+            blend={0.5}
+            speed={0.7}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
+          {/* Floating abstract vibe elements */}
         <div className="absolute top-[10%] left-[80%] w-32 h-32 rounded-full border border-[var(--color-gold)]/20 animate-float-slow hidden lg:block"></div>
         <div className="absolute top-[20%] left-[5%] w-16 h-4 bg-[var(--color-teal)]/40 rounded-full animate-wave blur-[2px] hidden lg:block"></div>
         <div className="absolute bottom-[20%] left-[50%] w-24 h-6 bg-[var(--color-gold)]/30 rounded-full animate-wave blur-[4px] hidden lg:block" style={{ animationDelay: '2s' }}></div>
@@ -51,7 +64,7 @@ export default function Home() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[var(--color-teal)] rounded-full blur-[150px] opacity-20 pointer-events-none animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-[var(--color-gold-muted)] rounded-full blur-[150px] opacity-10 pointer-events-none" />
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full relative z-10 pt-10">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -59,17 +72,17 @@ export default function Home() {
             className="z-10"
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white mb-8 bg-black/40 border border-gray-800 backdrop-blur-md">
-              We are going to create a result driven optimal marketing strategy
+              {dict.badge}
             </div>
 
             <h1 className="text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
-              Stop Losing Leads <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-teal)]">to an Invisible</span> <br />
-              Online Presence.
+              {dict.headline_1} <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-teal)]">{dict.headline_highlight}</span> <br />
+              {dict.headline_3}
             </h1>
 
             <p className="text-xl text-gray-400 mb-10 leading-relaxed font-light border-l-2 border-[var(--color-teal)] pl-4">
-              Most businesses are one funnel away from a breakthrough. JLAW 360 builds the bridge between your product and your profit.
+              {dict.description}
             </p>
 
             <div className="bg-gradient-to-r from-[#111A20] to-[#0A1116] border border-gray-800/80 rounded-2xl p-6 mb-10 max-w-xl shadow-2xl relative overflow-hidden group">
@@ -81,7 +94,7 @@ export default function Home() {
                   <input type="email" placeholder="Email" className="bg-black/50 border border-gray-700 rounded-full px-5 py-3 text-sm flex-1 min-w-0 outline-none focus:border-[var(--color-teal)] transition text-white placeholder-gray-500" />
                 </div>
                 <button aria-label="Request a free digital marketing quote" className="neon-btn-gold px-8 py-3.5 rounded-full font-bold text-sm whitespace-nowrap w-full sm:w-auto sm:self-start shadow-[0_0_20px_rgba(205,166,81,0.3)] hover:shadow-[0_0_30px_rgba(205,166,81,0.5)] transition-shadow">
-                  Request a Quote
+                  {dict.cta_primary}
                 </button>
               </div>
             </div>
@@ -158,6 +171,7 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
         </div>
       </section>
 

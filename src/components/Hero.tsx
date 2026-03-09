@@ -1,120 +1,149 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Play } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Play, Terminal, Cpu, Database } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Hero() {
+    const { scrollY } = useScroll();
+    const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
+    const y2 = useTransform(scrollY, [0, 1000], [0, -100]);
+    const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050A0E]"
         >
-            {/* Background layers */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-teal-dark" />
-            <div className="absolute inset-0 dot-pattern opacity-40" />
+            {/* --- Futuristic Background --- */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(39,126,149,0.15)_0%,_transparent_60%)]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-gold)]/5 rounded-full blur-[150px] animate-pulse-glow" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_40%,transparent_100%)]" />
+            </div>
 
-            {/* Radial gold accent */}
-            <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]" />
-            <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-teal/10 rounded-full blur-[100px]" />
+            {/* --- Floating Tech Nodes (Parallax) --- */}
+            <motion.div style={{ y: y1 }} className="absolute z-0 hidden lg:block right-[15%] top-[25%] opacity-60">
+                <div className="cyber-glass p-4 rounded-xl flex items-center gap-3 animate-float">
+                    <div className="w-10 h-10 rounded-lg bg-[var(--color-teal)]/20 flex items-center justify-center border border-[var(--color-teal)]/40">
+                        <Terminal size={18} className="text-[var(--color-teal)]" />
+                    </div>
+                    <div>
+                        <p className="text-[10px] text-[var(--color-teal)] uppercase tracking-widest font-bold">System Status</p>
+                        <p className="text-sm font-mono text-white">AI.Agents_Active: [124]</p>
+                    </div>
+                </div>
+            </motion.div>
 
-            {/* Content */}
-            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center">
-                {/* Badge */}
+            <motion.div style={{ y: y2 }} className="absolute z-0 hidden lg:block left-[15%] bottom-[30%] opacity-60">
+                <div className="cyber-glass p-4 rounded-xl flex items-center gap-3 animate-float" style={{ animationDelay: "2s" }}>
+                    <div className="w-10 h-10 rounded-lg bg-[var(--color-gold)]/20 flex items-center justify-center border border-[var(--color-gold)]/40">
+                        <Database size={18} className="text-[var(--color-gold)]" />
+                    </div>
+                    <div>
+                        <p className="text-[10px] text-[var(--color-gold)] uppercase tracking-widest font-bold">Data Ingestion</p>
+                        <p className="text-sm font-mono text-white">LTV_Predict: +312%</p>
+                    </div>
+                </div>
+            </motion.div>
+
+            {/* --- Core Content --- */}
+            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 text-center">
+                
+                {/* Tactical Badge */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/20 bg-gold/5 mb-8"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-[var(--color-teal)]/40 bg-[var(--color-teal)]/10 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(39,126,149,0.2)]"
                 >
-                    <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                    <span className="text-sm font-medium text-gold">
-                        Montreal&apos;s #1 360° Marketing Agency
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-gold)] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--color-gold)]"></span>
+                    </span>
+                    <span className="text-xs font-mono tracking-widest text-[var(--color-teal)] uppercase">
+                        Protocol 2026 Active // Montreal
                     </span>
                 </motion.div>
 
-                {/* Headline */}
+                {/* Cinematic Headline */}
                 <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6"
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-5xl sm:text-7xl md:text-8xl font-extrabold leading-[1.05] tracking-tight mb-8"
                 >
-                    Build Your{" "}
-                    <span className="gold-gradient-text">360° Automated</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+                        The Algorithmic
+                    </span>
                     <br />
-                    Sales Ecosystem.
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold)] via-[#F2D780] to-[var(--color-gold)] filter drop-shadow-[0_0_15px_rgba(205,166,81,0.4)]">
+                        Growth Engine.
+                    </span>
                 </motion.h1>
 
                 {/* Subheadline */}
                 <motion.p
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"
+                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
                 >
-                    We help Montreal businesses scale by surrounding their customers with
-                    high-converting funnels, AI automation, and omnipresent marketing.
+                    We don&apos;t run standard campaigns. We deploy <b className="text-white font-medium">autonomous AI systems</b> and <b className="text-[var(--color-teal)] font-medium">predictive sales funnels</b> that surround your market and capture revenue 24/7.
                 </motion.p>
 
-                {/* CTAs */}
+                {/* Tactical CTAs */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
                     <Link
                         href="#offers"
-                        className="group px-8 py-4 bg-gold text-black font-bold text-base rounded-xl hover:bg-gold-light transition-all duration-300 hover:shadow-xl hover:shadow-gold/25 flex items-center gap-2"
+                        className="group relative px-8 py-4 w-full sm:w-auto overflow-hidden rounded-xl bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-gold-muted)] text-[#050A0E] font-extrabold text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(205,166,81,0.5)] flex items-center justify-center gap-3"
                     >
-                        Book My Strategy Session
-                        <ArrowRight
-                            size={18}
-                            className="group-hover:translate-x-1 transition-transform"
-                        />
+                        <span className="absolute inset-0 w-full h-full bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -skew-x-12 -ml-4" />
+                        Initialize Strategy <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                         href="#process"
-                        className="px-8 py-4 border border-gray-700 text-white font-medium text-base rounded-xl hover:border-gold/40 hover:bg-white/5 transition-all duration-300 flex items-center gap-2"
+                        className="group px-8 py-4 w-full sm:w-auto border border-gray-700 text-gray-300 font-bold text-sm uppercase tracking-widest rounded-xl hover:border-[var(--color-teal)] hover:text-white hover:bg-[var(--color-teal)]/10 transition-all duration-300 flex items-center justify-center gap-3"
                     >
-                        <Play size={16} className="text-gold" />
-                        See How It Works
+                        <Cpu size={18} className="text-[var(--color-teal)] group-hover:animate-pulse" />
+                        View Architecture
                     </Link>
                 </motion.div>
 
-                {/* Stats */}
+                {/* Live Data HUD */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                    className="mt-20 pt-10 border-t border-white/5 flex flex-wrap justify-center gap-8 md:gap-16"
                 >
                     {[
-                        { value: "150+", label: "Funnels Built" },
-                        { value: "3.2M", label: "Revenue Generated" },
-                        { value: "98%", label: "Client Retention" },
-                        { value: "24/7", label: "AI Automation" },
+                        { val: "150+", label: "Funnels Deployed" },
+                        { val: "$3.2M", label: "Tracked ROAS" },
+                        { val: "0.02s", label: "AI Response Time" },
+                        { val: "99.9%", label: "System Uptime" }
                     ].map((stat, i) => (
-                        <div key={i} className="text-center">
-                            <p className="text-3xl sm:text-4xl font-extrabold gold-gradient-text">
-                                {stat.value}
-                            </p>
-                            <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+                        <div key={i} className="flex flex-col items-center">
+                            <span className="text-2xl md:text-3xl font-mono font-bold text-white tracking-tight mb-1">{stat.val}</span>
+                            <span className="text-xs font-mono text-[var(--color-teal)] uppercase tracking-widest">{stat.label}</span>
                         </div>
                     ))}
                 </motion.div>
             </div>
 
-            {/* Scroll indicator */}
-            <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            >
-                <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex items-start justify-center p-1.5">
-                    <div className="w-1.5 h-2.5 bg-gold rounded-full" />
-                </div>
+            {/* Fading Scroll Indicator */}
+            <motion.div style={{ opacity }} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Scroll to Access</span>
+                <motion.div
+                    animate={{ y: [0, 10, 0], opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="w-[1px] h-12 bg-gradient-to-b from-[var(--color-teal)] to-transparent"
+                />
             </motion.div>
         </section>
     );

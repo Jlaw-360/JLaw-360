@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import "./globals.css";
+import LeadMagnetModal from "@/components/LeadMagnetModal";
+import ChatWidget from "@/components/ChatWidget";
+import "../globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -49,13 +51,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+import { getDictionary } from "@/i18n/get-dictionary";
+import type { Locale } from "@/i18n/config";
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as Locale);
+
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={lang} className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased bg-[var(--color-navy)] text-white`}>
         {/* JSON-LD Structured Data for Local Business / SEO Agency */}
         <script
@@ -100,9 +110,11 @@ export default function RootLayout({
             })
           }}
         />
-        <Navbar />
+        <Navbar dict={dict.navigation} lang={lang} />
         {children}
-        <Footer />
+        <Footer dict={dict.footer} lang={lang} />
+        <LeadMagnetModal />
+        <ChatWidget />
       </body>
     </html>
   );

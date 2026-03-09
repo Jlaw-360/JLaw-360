@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,11 +20,18 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: "Home", href: "/" },
-        { name: "Services", href: "#services" },
-        { name: "About", href: "#about" },
-        { name: "Niches", href: "#niches" },
+        { name: dict.home, href: `/${lang}` },
+        { name: dict.services, href: `/${lang}/services` },
+        { name: dict.about, href: `/${lang}/about` },
+        { name: dict.niches, href: `/${lang}/#niches` },
     ];
+
+    const switchLang = (targetLang: string) => {
+        if (!pathname) return `/${targetLang}`;
+        const segments = pathname.split('/');
+        segments[1] = targetLang;
+        return segments.join('/');
+    };
 
     return (
         <motion.nav
@@ -36,7 +45,7 @@ export default function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
+                <Link href={`/${lang}`} className="flex items-center gap-2 group">
                     <img src="/logo.png" alt="JLAW 360 Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-md" />
                 </Link>
 
@@ -51,13 +60,18 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
+                    {/* Client Portal Link */}
+                    <Link href={`/${lang}/login`} className="text-sm font-bold text-[var(--color-teal)] hover:text-[var(--color-gold)] transition-colors flex items-center gap-1.5 uppercase tracking-wider">
+                        <Lock size={14} /> {dict.portal}
+                    </Link>
+
                     <div className="flex items-center gap-3 text-sm font-bold border border-[var(--color-teal-dark)] bg-black/40 rounded-full px-4 py-1.5 shadow-inner">
-                        <Link href="/" className="text-[var(--color-gold)] hover:text-[var(--color-sand)] transition drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]">EN</Link>
+                        <Link href={switchLang("en")} className={`${lang === 'en' ? 'text-[var(--color-gold)] drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]' : 'text-gray-400 hover:text-white transition'}`}>EN</Link>
                         <span className="text-gray-600">|</span>
-                        <Link href="/fr" className="text-gray-400 hover:text-white transition">FR</Link>
+                        <Link href={switchLang("fr")} className={`${lang === 'fr' ? 'text-[var(--color-gold)] drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]' : 'text-gray-400 hover:text-white transition'}`}>FR</Link>
                     </div>
                     <button className="px-6 py-2.5 bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-gold-muted)] text-[var(--color-navy)] text-sm font-bold rounded hover:opacity-90 transition shadow-[0_0_15px_rgba(212,182,115,0.2)]">
-                        Free Audit
+                        {dict.audit_btn}
                     </button>
                 </div>
 
@@ -83,13 +97,22 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
+                    {/* Mobile Client Portal Link */}
+                    <Link 
+                        href={`/${lang}/login`} 
+                        className="text-lg font-bold text-[var(--color-teal)] py-2 border-b border-gray-800/50 flex items-center gap-2"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        <Lock size={18} /> {dict.portal}
+                    </Link>
+
                     <div className="flex items-center gap-4 py-2 border-b border-gray-800/50">
-                        <Link href="/" className="text-xl font-bold text-[var(--color-gold)] drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]">EN</Link>
+                        <Link href={switchLang("en")} className={`text-xl font-bold ${lang === 'en' ? 'text-[var(--color-gold)] drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]' : 'text-gray-400 hover:text-white transition'}`}>EN</Link>
                         <span className="text-gray-600">|</span>
-                        <Link href="/fr" className="text-xl font-bold text-gray-400">FR</Link>
+                        <Link href={switchLang("fr")} className={`text-xl font-bold ${lang === 'fr' ? 'text-[var(--color-gold)] drop-shadow-[0_0_8px_rgba(205,166,81,0.5)]' : 'text-gray-400 hover:text-white transition'}`}>FR</Link>
                     </div>
                     <button className="w-full mt-4 px-6 py-3 bg-[var(--color-gold)] text-[var(--color-navy)] font-bold rounded">
-                        Get Your Free Audit
+                        {dict.audit_btn}
                     </button>
                 </div>
             )}
