@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin, Zap, PhoneCall } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,6 +40,20 @@ export default function HVACTrades() {
                             <span className="text-sm text-gray-300">AI Dispatch Bot books the truck immediately. Top 3 Map Pack rankings across 15+ local micro-markets.</span>
                         </div>
                     </div>
+                </section>
+
+                {/* --- Visual Connection --- */}
+                <section className="mb-16 rounded-2xl overflow-hidden border border-gray-800 shadow-[0_0_30px_rgba(39,126,149,0.15)] relative h-[300px] lg:h-[400px] group">
+                   <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                     <span className="text-[var(--color-teal)] font-bold tracking-widest uppercase border border-[var(--color-teal)] px-6 py-2 rounded-full backdrop-blur-sm bg-black/50">Smart Dispatch Tech</span>
+                   </div>
+                   <Image 
+                      src="/images/hvac.png" 
+                      alt="Autonomous HVAC Dispatch AI" 
+                      fill
+                      className="object-cover transform scale-100 group-hover:scale-105 transition duration-700"
+                      priority
+                   />
                 </section>
 
                 {/* How We Do It */}

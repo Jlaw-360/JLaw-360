@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Bot, CheckCircle, Navigation, Network, BarChart, Calendar, PlayCircle, Shield, Zap, Target, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const fadeIn = {
@@ -73,13 +74,13 @@ export default function Home() {
 
             <div className="bg-gradient-to-r from-[#111A20] to-[#0A1116] border border-gray-800/80 rounded-2xl p-6 mb-10 max-w-xl shadow-2xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-teal)]/10 to-[var(--color-gold)]/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
-              <h3 className="text-white font-bold mb-4 text-lg relative z-10">Free 15 minute Digital Marketing Consultation</h3>
+              <h2 className="text-white font-bold mb-4 text-lg relative z-10">Free 15 minute Digital Marketing Consultation</h2>
               <div className="flex flex-col gap-4 relative z-10">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input type="text" placeholder="First Name" className="bg-black/50 border border-gray-700 rounded-full px-5 py-3 text-sm flex-1 min-w-0 outline-none focus:border-[var(--color-teal)] transition text-white placeholder-gray-500" />
                   <input type="email" placeholder="Email" className="bg-black/50 border border-gray-700 rounded-full px-5 py-3 text-sm flex-1 min-w-0 outline-none focus:border-[var(--color-teal)] transition text-white placeholder-gray-500" />
                 </div>
-                <button className="neon-btn-gold px-8 py-3.5 rounded-full font-bold text-sm whitespace-nowrap w-full sm:w-auto sm:self-start shadow-[0_0_20px_rgba(205,166,81,0.3)] hover:shadow-[0_0_30px_rgba(205,166,81,0.5)] transition-shadow">
+                <button aria-label="Request a free digital marketing quote" className="neon-btn-gold px-8 py-3.5 rounded-full font-bold text-sm whitespace-nowrap w-full sm:w-auto sm:self-start shadow-[0_0_20px_rgba(205,166,81,0.3)] hover:shadow-[0_0_30px_rgba(205,166,81,0.5)] transition-shadow">
                   Request a Quote
                 </button>
               </div>
@@ -100,7 +101,7 @@ export default function Home() {
                   <Bot className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg">JLAW AI Agent</h3>
+                  <h2 className="font-bold text-white text-lg">JLAW AI Agent</h2>
                   <p className="text-xs text-[var(--color-teal)] flex items-center gap-1.5 font-medium mt-0.5">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse border border-green-300"></span> Online
                   </p>
@@ -151,7 +152,7 @@ export default function Home() {
 
               <div className="bg-black/50 rounded-xl p-2.5 flex items-center border border-gray-800/80 backdrop-blur-md">
                 <input type="text" disabled placeholder="Type your message..." className="bg-transparent flex-1 px-3 outline-none text-sm text-gray-400" />
-                <button disabled className="bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-teal-dark)] p-2.5 rounded-lg text-white shadow-md">
+                <button aria-label="Send message to AI bot" disabled className="bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-teal-dark)] p-2.5 rounded-lg text-white shadow-md">
                   <Navigation size={16} />
                 </button>
               </div>
@@ -195,15 +196,16 @@ export default function Home() {
               {/* Abstract wave decoration below title */}
               <div className="w-48 h-4 bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-navy)] rounded-full animate-wave mt-4"></div>
 
-              {/* Floating tech elements to mimic the graphic in reference */}
-              <div className="mt-12 relative w-64 h-64 mx-auto lg:mx-0">
-                <div className="absolute inset-0 bg-[var(--color-teal)] blur-[80px] opacity-20 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-[#111A20] to-black rounded-2xl border border-gray-700 shadow-2xl flex items-center justify-center transform -rotate-12 animate-float">
-                  <span className="text-3xl font-black text-white">UX</span>
-                </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-[#111A20] to-black rounded-2xl border border-gray-700 shadow-2xl flex items-center justify-center transform rotate-12 translate-x-10 translate-y-10 animate-float-slow">
-                  <span className="text-3xl font-black text-[var(--color-teal)]">UI</span>
-                </div>
+              {/* Implemented the luxury AI dashboard image to hook the user */}
+              <div className="mt-12 relative w-full h-[300px] lg:h-[400px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(39,126,149,0.3)] group border border-gray-800">
+                <div className="absolute inset-0 bg-[var(--color-teal)]/20 mix-blend-overlay z-10 pointer-events-none transition duration-500 group-hover:bg-transparent"></div>
+                <Image 
+                  src="/images/hero_dashboard.png" 
+                  alt="JLAW 360 Digital Transformation Dashboard" 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
               </div>
             </motion.div>
 

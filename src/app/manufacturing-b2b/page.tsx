@@ -1,5 +1,6 @@
 import { ArrowRight, Factory, LineChart, BookOpen } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,6 +40,20 @@ export default function ManufacturingB2B() {
                             <span className="text-sm text-gray-300">Targeted LinkedIn ABM campaigns. High-converting technical whitepapers. Automated lead scoring.</span>
                         </div>
                     </div>
+                </section>
+
+                {/* --- Visual Connection --- */}
+                <section className="mb-16 rounded-2xl overflow-hidden border border-gray-800 shadow-[0_0_30px_rgba(205,166,81,0.15)] relative h-[300px] lg:h-[400px] group">
+                   <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                     <span className="text-[var(--color-gold)] font-bold tracking-widest uppercase border border-[var(--color-gold)] px-6 py-2 rounded-full backdrop-blur-sm bg-black/50">Supply Chain OS</span>
+                   </div>
+                   <Image 
+                      src="/images/manufacturing.png" 
+                      alt="Industrial Digital Transformation OS" 
+                      fill
+                      className="object-cover transform scale-100 group-hover:scale-105 transition duration-700"
+                      priority
+                   />
                 </section>
 
                 {/* How We Do It */}

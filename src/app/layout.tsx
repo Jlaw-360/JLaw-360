@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     description: "AI automation and high-converting funnels.",
     images: ["/og-image.jpg"],
   },
+  alternates: {
+    canonical: "https://jlaw360.com",
+  },
 };
 
 export default function RootLayout({
@@ -54,6 +57,49 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased bg-[var(--color-navy)] text-white`}>
+        {/* JSON-LD Structured Data for Local Business / SEO Agency */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "JLAW 360 Marketing",
+              "image": "https://jlaw360.com/logo.png",
+              "@id": "https://jlaw360.com",
+              "url": "https://jlaw360.com",
+              "telephone": "+15145550360",
+              "email": "hello@jlaw360.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Montreal",
+                "addressRegion": "QC",
+                "addressCountry": "CA"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 45.5017,
+                "longitude": -73.5673
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/jlaw360",
+                "https://www.facebook.com/jlaw360"
+              ]
+            })
+          }}
+        />
         <Navbar />
         {children}
         <Footer />
