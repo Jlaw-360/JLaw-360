@@ -6,6 +6,7 @@ import { createClient } from '@/utils/supabase/server'
 
 export async function login(formData: FormData) {
   const supabase = await createClient()
+  const lang = formData.get('lang') as string || 'en'
   const data = {
     email: formData.get('email') as string,
     password: formData.get('password') as string,
@@ -14,15 +15,16 @@ export async function login(formData: FormData) {
   const { error } = await supabase.auth.signInWithPassword(data)
 
   if (error) {
-    redirect('/login?error=Could not authenticate user')
+    redirect(`/${lang}/login?error=${encodeURIComponent(error.message)}`)
   }
 
-  revalidatePath('/', 'layout')
-  redirect('/dashboard')
+  revalidatePath(`/${lang}`, 'layout')
+  redirect(`/${lang}/dashboard`)
 }
 
 export async function signup(formData: FormData) {
   const supabase = await createClient()
+  const lang = formData.get('lang') as string || 'en'
   const data = {
     email: formData.get('email') as string,
     password: formData.get('password') as string,
@@ -31,15 +33,16 @@ export async function signup(formData: FormData) {
   const { error } = await supabase.auth.signUp(data)
 
   if (error) {
-    redirect('/login?error=Could not authenticate user')
+    redirect(`/${lang}/login?error=${encodeURIComponent(error.message)}`)
   }
 
-  revalidatePath('/', 'layout')
-  redirect('/dashboard')
+  revalidatePath(`/${lang}`, 'layout')
+  redirect(`/${lang}/dashboard`)
 }
 
-export async function logout() {
+export async function logout(formData: FormData) {
   const supabase = await createClient()
+  const lang = formData.get('lang') as string || 'en'
   await supabase.auth.signOut()
-  redirect('/login')
+  redirect(`/${lang}/login`)
 }

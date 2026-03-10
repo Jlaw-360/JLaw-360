@@ -3,7 +3,8 @@ import { redirect } from 'next/navigation'
 import { logout } from '../login/actions'
 import { LogOut, Activity, Users, Database } from 'lucide-react'
 
-export default async function DashboardPage() {
+export default async function DashboardPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
   const supabase = await createClient()
 
   // Verify Auth on the Server
@@ -28,6 +29,7 @@ export default async function DashboardPage() {
               Connected Auth ID: <span className="text-[var(--color-teal)]">{user.email}</span>
             </div>
             <form action={logout}>
+              <input type="hidden" name="lang" value={lang} />
               <button className="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
                 Terminate Session
                 <LogOut size={16} />

@@ -457,7 +457,7 @@
   },
   "login": {
     "return": "Retour",
-    "title": "Accès au Portail Client",
+    "title": "Inscrivez-vous ou Connectez-vous",
     "desc": "Saisissez vos identifiants d'habilitation pour visualiser votre tableau de bord de données en direct.",
     "email_label": "Autorisation Email",
     "email_placeholder": "executif@entreprise.com",

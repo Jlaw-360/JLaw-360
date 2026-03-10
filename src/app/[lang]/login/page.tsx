@@ -5,8 +5,10 @@ import { getDictionary } from '@/i18n/get-dictionary'
 import type { Locale } from '@/i18n/config'
 import GoogleLoginButton from '@/components/GoogleLoginButton'
 
-export default async function LoginPage({ params }: { params: Promise<{ lang: string }> }) {
+export default async function LoginPage({ params, searchParams }: { params: Promise<{ lang: string }>, searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   const { lang } = await params;
+  const resolvedParams = await searchParams;
+  const errorMsg = typeof resolvedParams?.error === 'string' ? resolvedParams.error : null;
   const dict = await getDictionary(lang as Locale);
   
   return (
@@ -36,6 +38,14 @@ export default async function LoginPage({ params }: { params: Promise<{ lang: st
           </div>
 
           <form className="space-y-6">
+            <input type="hidden" name="lang" value={lang} />
+            
+            {errorMsg && (
+              <div className="bg-red-500/10 border border-red-500/50 text-red-400 font-mono text-xs p-3 rounded-lg text-center">
+                {errorMsg}
+              </div>
+            )}
+
             <div className="space-y-2">
               <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-[#277E95]">{dict.login?.email_label || "Email Authorization"}</label>
               <input 
