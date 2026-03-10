@@ -167,7 +167,8 @@ export default function Offers() {
 
                   {/* CTA */}
                   <Link
-                    href="#hero"
+                    href="https://calendly.com/your-calendly-link"
+                    target="_blank"
                     className={`relative w-full py-4 rounded-xl flex items-center justify-center gap-2 overflow-hidden transition-all duration-300 ${
                       offer.popular 
                         ? "bg-gradient-to-r from-[var(--color-gold)] to-[#F2D780] text-[#050A0E] font-extrabold hover:shadow-[0_0_30px_rgba(205,166,81,0.4)]" 

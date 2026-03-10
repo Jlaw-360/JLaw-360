@@ -67,7 +67,7 @@ export default function ManufacturingB2B() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Account-Based Marketing (ABM)</h3>
-                                <p className="text-gray-400 text-sm">We don't cast wide nets. We build hyper-targeted campaigns (LinkedIn & programmatic) aimed directly at the procurement officers and decision-makers within specific Canadian manufacturing tier lists.</p>
+                                <p className="text-gray-400 text-sm">We don&apos;t cast wide nets. We build hyper-targeted campaigns (LinkedIn & programmatic) aimed directly at the procurement officers and decision-makers within specific Canadian manufacturing tier lists.</p>
                             </div>
                         </div>
 

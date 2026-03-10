@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, CheckCircle, BarChart, Target, Building2, MapPin, DollarSign, Magnet, Calendar } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle, Target, Building2, MapPin, DollarSign, Magnet, Calendar } from "lucide-react";
 
 type SetupData = {
   industry: string;
@@ -12,7 +12,8 @@ type SetupData = {
   goal: string;
 };
 
-export default function StrategyGenerator({ dict }: { dict?: any }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function StrategyGenerator({ dict }: { dict: Record<string, any> }) {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<SetupData>({
     industry: "", city: "", revenue: "", leadSource: "", goal: ""
@@ -201,9 +202,14 @@ export default function StrategyGenerator({ dict }: { dict?: any }) {
               <p className="text-gray-400 mb-8 max-w-xl mx-auto">
                 {d.result.cta.desc.replace("{industry}", data.industry)}
               </p>
-              <button className="neon-btn-gold px-10 py-4 rounded-xl font-bold text-lg inline-flex items-center gap-3">
+              <a 
+                href="https://calendly.com/your-calendly-link" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neon-btn-gold px-10 py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center gap-3 transition-transform hover:scale-105"
+              >
                 <Calendar /> {d.result.cta.btn}
-              </button>
+              </a>
             </div>
             
             <button onClick={() => { setStep(0); setData({industry:"", city:"", revenue:"", leadSource:"", goal:""}) }} className="mt-6 text-gray-500 text-sm hover:text-white mx-auto block">

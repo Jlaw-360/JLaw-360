@@ -23,7 +23,7 @@ export default function RealEstate() {
                 </h1>
 
                 <p className="text-xl text-gray-300 mb-12">
-                    What most agencies get wrong: they sell you standard "leads." We engineer <span className="text-[var(--color-teal)] font-bold">Predictive Acquisition Systems</span> that qualify buyers and automate seller appointments while you are out showing homes.
+                    What most agencies get wrong: they sell you standard &quot;leads.&quot; We engineer <span className="text-[var(--color-teal)] font-bold">Predictive Acquisition Systems</span> that qualify buyers and automate seller appointments while you are out showing homes.
                 </p>
 
                 {/* The Pain & The Pivot */}
@@ -77,7 +77,7 @@ export default function RealEstate() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Targeted Seller Funnels</h3>
-                                <p className="text-gray-400 text-sm">We stop you from chasing buyers and instead attract sellers. We build high-converting "Home Valuation" funnels paired with localized Meta and Google ad campaigns to capture high-intent listings in specific Toronto or Montreal neighborhoods.</p>
+                                <p className="text-gray-400 text-sm">We stop you from chasing buyers and instead attract sellers. We build high-converting &quot;Home Valuation&quot; funnels paired with localized Meta and Google ad campaigns to capture high-intent listings in specific Toronto or Montreal neighborhoods.</p>
                             </div>
                         </div>
 
@@ -87,7 +87,7 @@ export default function RealEstate() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Predictive Lead Scoring & Automation</h3>
-                                <p className="text-gray-400 text-sm">Every contact is tracked and scored. Our systems know when a lead is "hot" (e.g., they just viewed a listing 3 times), triggering custom SMS automations to speed up your response time.</p>
+                                <p className="text-gray-400 text-sm">Every contact is tracked and scored. Our systems know when a lead is &quot;hot&quot; (e.g., they just viewed a listing 3 times), triggering custom SMS automations to speed up your response time.</p>
                             </div>
                         </div>
                     </div>
@@ -95,8 +95,10 @@ export default function RealEstate() {
 
                 {/* CTA */}
                 <section className="bg-gradient-to-br from-[var(--color-teal-dark)] to-[#0c1e26] p-10 rounded-2xl text-center border border-[var(--color-teal)]">
-                    <h2 className="text-3xl font-bold mb-4">Automate Your Pipeline</h2>
-                    <p className="mb-8 text-gray-300">See exactly how our AI agents handle real estate inquiries and convert them into scheduled showings.</p>
+                    <h2 className="text-3xl font-bold mb-8">Ready to Stop Buying Shared Leads?</h2>
+                    <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                        Stop sharing Zillow leads with 5 other realtors. Let&apos;s build your exclusive seller acquisition system today.
+                    </p>
                     <button className="px-8 py-4 bg-[var(--color-gold)] text-[var(--color-navy)] font-bold rounded hover:opacity-90 transition transform hover:scale-105 shadow-[0_0_20px_rgba(205,166,81,0.3)] w-full sm:w-auto">
                         Get Your Free AI Systems Audit
                     </button>

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, X, Send, Calendar, ArrowRight } from "lucide-react";
+import { X, Send, Bot, ArrowRight } from "lucide-react";
 
 type Message = {
   role: "bot" | "user";
@@ -18,7 +18,7 @@ function getBotReply(input: string): Message {
     return {
       role: "bot",
       text: "We have two main packages:\n\n🚀 Digital Launchpad — $2,500 (one-time): Perfect for new businesses needing a complete digital foundation.\n\n📈 Scale & Dominate Suite — $15,000/qtr: Full AI automation + omnipresent ads for established businesses ready to scale.",
-      cta: { label: "Book a Free Strategy Call", href: "#hero" },
+      cta: { label: "Book a Free Strategy Call", href: "https://calendly.com/your-calendly-link" },
     };
   }
 
@@ -26,7 +26,7 @@ function getBotReply(input: string): Message {
     return {
       role: "bot",
       text: "We design high-converting sales funnels using ClickFunnels and GoHighLevel — optimized for your specific audience and offer. Every funnel is A/B tested for maximum ROI.",
-      cta: { label: "See Our Process", href: "#process" },
+      cta: { label: "See Our Process", href: "/en/services" },
     };
   }
 
@@ -34,7 +34,7 @@ function getBotReply(input: string): Message {
     return {
       role: "bot",
       text: "We specialize in bilingual SEO for Montreal and Ontario businesses. That means ranking in both English and French markets — which most agencies can't do. Our SEO packages include full audit, content strategy, and ongoing optimization.",
-      cta: { label: "Book a Free SEO Audit", href: "#hero" },
+      cta: { label: "Book a Free SEO Audit", href: "https://calendly.com/your-calendly-link" },
     };
   }
 
@@ -56,7 +56,7 @@ function getBotReply(input: string): Message {
     return {
       role: "bot",
       text: "Absolutely! Book your free 15-minute strategy session directly — no obligation, just a focused conversation about your growth goals.",
-      cta: { label: "Book My Free Session", href: "#hero" },
+      cta: { label: "Book My Free Session", href: "https://calendly.com/your-calendly-link" },
     };
   }
 
@@ -102,7 +102,7 @@ function getBotReply(input: string): Message {
   return {
     role: "bot",
     text: "Great question! For anything specific, I'd recommend booking a free 15-minute strategy session with Walkens. He'll give you a personalized growth plan — absolutely free.",
-    cta: { label: "Book Your Free Call", href: "#hero" },
+    cta: { label: "Book Your Free Call", href: "https://calendly.com/your-calendly-link" },
   };
 }
 

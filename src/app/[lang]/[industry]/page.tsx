@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, AlertTriangle, XCircle, CheckCircle, TrendingUp, DollarSign } from "lucide-react";
+import { AlertTriangle, XCircle, CheckCircle, TrendingUp } from "lucide-react";
 import ROICalculator from "@/components/funnels/ROICalculator";
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
@@ -10,7 +9,8 @@ export default async function IndustryPage({ params }: { params: Promise<{ lang:
   const { lang, industry } = await params;
   const dict = await getDictionary(lang as Locale);
   
-  const data = (dict.industryData as Record<string, any>)?.[industry];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const data = (dict.industryData as Record<string, any>)?.[industry] as Record<string, any>;
   const pageDict = dict.industryPage;
   
   if (!data || !pageDict) notFound();
@@ -54,7 +54,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ lang:
               <XCircle /> {pageDict.wrongTitle}
             </h3>
             <ul className="space-y-6">
-              {data.doingWrong.map((item: string, i: number) => (
+              {(data.doingWrong as string[]).map((item: string, i: number) => (
                 <li key={i} className="flex gap-4 items-start">
                   <div className="w-6 h-6 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">{i+1}</div>
                   <span className="text-gray-300">{item}</span>
@@ -70,7 +70,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ lang:
               <CheckCircle /> {pageDict.rightTitle}
             </h3>
             <ul className="space-y-6 relative z-10">
-              {data.competitors.map((item: string, i: number) => (
+              {(data.competitors as string[]).map((item: string, i: number) => (
                 <li key={i} className="flex gap-4 items-start">
                   <div className="w-6 h-6 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">{i+1}</div>
                   <span className="text-gray-300">{item}</span>

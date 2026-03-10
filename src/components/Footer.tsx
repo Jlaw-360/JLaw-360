@@ -1,15 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Locale } from "@/i18n/config";
 
-export default function Footer({ dict, lang }: { dict: any, lang: string }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Footer({ lang, dict }: { lang: Locale; dict: Record<string, any> }) {
     return (
         <footer className="bg-[#0B1A22] text-white pt-24 pb-8 px-6 border-t border-gray-900 mt-20">
             <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
 
                 {/* Brand */}
                 <div className="md:col-span-1">
-                    <Link href={`/${lang}`} className="inline-block mb-6">
-                        <img src="/logo.png" alt="JLAW 360 Logo" className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition" />
+                    <Link href={`/${lang}`} className="inline-block mb-6 relative w-32 h-14">
+                        <Image src="/logo.png" alt="JLAW 360 Logo" fill className="object-contain opacity-90 hover:opacity-100 transition" sizes="128px" />
                     </Link>
                     <p className="text-gray-400 text-sm mb-6 max-w-xs">
                         {dict.description}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+
 export const metadata = {
     title: "Terms of Service | JLAW 360 Marketing",
     description: "Terms of Service for JLAW 360 Marketing.",
@@ -31,12 +32,12 @@ export default function TermsOfService() {
                 <div className="prose prose-invert prose-teal max-w-none text-gray-300">
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">1. Agreement to Terms</h2>
                     <p className="mb-6">
-                        These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and JLAW 360 Marketing ("we," "us" or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
+                        These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;you&quot;) and JLAW 360 Marketing (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
                     </p>
 
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">2. Intellectual Property Rights</h2>
                     <p className="mb-6">
-                        Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws.
+                        Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the &quot;Content&quot;) and the trademarks, service marks, and logos contained therein (the &quot;Marks&quot;) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws.
                     </p>
 
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">3. User Representations</h2>
@@ -62,9 +63,7 @@ export default function TermsOfService() {
                     </p>
 
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">6. Contact Us</h2>
-                    <p className="mb-6">
-                        In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: <strong>legal@jlaw360marketing.com</strong>.
-                    </p>
+                    <p className="mb-4">You may not use our services for any illegal activities, spamming, or violating the rights of others. We reserve the right to terminate your access if you violate these terms. Please also see our <Link href="/privacy-policy" className="text-[var(--color-teal)] hover:underline">&quot;Privacy Policy&quot;</Link> for more information on how we handle your data.</p>
                 </div>
             </div>
         </main>

@@ -15,15 +15,8 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
-  }
-};
-
-export default function HomeClient({ dict, lang }: { dict: any, lang: string }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HomeClient({ dict, lang }: { dict: Record<string, any>, lang: string }) {
   const { homePage, calculator, generator } = dict;
 
   return (
@@ -82,7 +75,8 @@ export default function HomeClient({ dict, lang }: { dict: any, lang: string }) 
           <h2 className="text-4xl lg:text-5xl font-bold mb-12">{homePage?.industries?.title_1} <span className="text-[var(--color-gold)] text-glow">{homePage?.industries?.title_2}</span></h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {homePage?.industries?.items?.map((industry: any, i: number) => {
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {homePage?.industries?.items?.map((industry: Record<string, any>, i: number) => {
               const paths = ["/roofing", "/hvac", "/dental", "/landscaping"];
               return (
               <Link key={i} href={`/${lang}${paths[i]}`} className="glass-card p-8 rounded-2xl border border-gray-800/60 hover:border-[var(--color-gold)] transition duration-300 group shadow-lg hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] bg-gradient-to-br from-[#111A20] to-black block text-left">
@@ -113,7 +107,8 @@ export default function HomeClient({ dict, lang }: { dict: any, lang: string }) 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* The Problems List */}
             <div className="space-y-6">
-              {homePage?.pain_points?.items?.map((problem: any, i: number) => (
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {homePage?.pain_points?.items?.map((problem: Record<string, any>, i: number) => (
                 <div key={i} className="flex gap-4 p-6 bg-black/40 border border-gray-800 rounded-2xl group hover:border-red-500/50 transition">
                   <div className="w-10 h-10 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center font-bold shrink-0">0{i+1}</div>
                   <div>

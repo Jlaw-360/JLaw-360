@@ -71,7 +71,7 @@ export default function Process() {
               The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-teal)]">Growth Engine</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-              Standard agencies run "ads." We engineer a fully automated, four-stage acquisition pipeline that scales revenue predictably.
+              Standard agencies run &quot;ads.&quot; We engineer a fully automated, four-stage acquisition pipeline that scales revenue predictably.
             </p>
           </motion.div>
         </div>
@@ -90,9 +90,25 @@ export default function Process() {
           <div className="space-y-12 md:space-y-24">
             {phases.map((phase, idx) => {
               const isEven = idx % 2 === 0;
-              const Icon = phase.icon;
-
+              // We must define useTransform *outside* the render map strictly speaking if the array is dynamic,
+              // but since phases is a static global array, we can safely pull these at the top or just use an inline motion value
+              // React complains when hooks are mapped. Let's create a sub-component for the mapped item.
               return (
+                <ProcessNode key={phase.id} phase={phase} idx={idx} isEven={isEven} pathLength={pathLength} />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProcessNode({ phase, idx, isEven, pathLength }: { phase: typeof phases[0], idx: number, isEven: boolean, pathLength: import('framer-motion').MotionValue<number> }) {
+  const Icon = phase.icon;
+  const opacity = useTransform(pathLength, [idx * 0.25, (idx * 0.25) + 0.1], [0, 0.2]);
+
+  return (
                 <div key={phase.id} className={`relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
                   
                   {/* Timeline Node */}
@@ -101,7 +117,7 @@ export default function Process() {
                     {/* Glowing dot that activates on scroll */}
                     <motion.div 
                       className="absolute inset-0 bg-gradient-to-br from-[var(--color-teal)] to-[var(--color-gold)] opacity-0 rounded-xl"
-                      style={{ opacity: useTransform(pathLength, [idx * 0.25, (idx * 0.25) + 0.1], [0, 0.2]) }}
+                      style={{ opacity }}
                     />
                   </div>
 
@@ -142,11 +158,5 @@ export default function Process() {
                     </div>
                   </motion.div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }

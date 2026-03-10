@@ -1,4 +1,4 @@
-import { Target, Award, ShieldCheck, ArrowRight } from "lucide-react"
+import { Target, Award, ShieldCheck } from "lucide-react";
 import Link from "next/link"
 import { getDictionary } from "@/i18n/get-dictionary"
 import type { Locale } from "@/i18n/config"

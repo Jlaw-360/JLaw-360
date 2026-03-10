@@ -25,18 +25,18 @@ export default function PrivacyPolicy() {
                 </h1>
 
                 <p className="text-gray-400 mb-10 text-lg border-l-2 border-[var(--color-teal)] pl-4">
-                    Last Updated: February 2026. This policy is fully compliant with Quebec's Law 25 (formerly Bill 25).
+                    Last Updated: February 2026. This policy is fully compliant with Quebec&apos;s Law 25 (formerly Bill 25).
                 </p>
 
                 <div className="prose prose-invert prose-teal max-w-none text-gray-300">
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">1. Introduction</h2>
                     <p className="mb-6">
-                        Welcome to JLAW 360 Marketing. We are committed to protecting your personal information and your right to privacy. This Privacy Policy is designed to comply with the strictest data protection regulations, including Quebec's Law 25.
+                    This privacy policy (&quot;Policy&quot;) describes how JLAW 360 Marketing (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses, and shares personal information of users of this website. By using the site, you consent to the data practices described in this statement. This policy complies with Quebec&apos;s Law 25 regarding the protection of personal information.
                     </p>
 
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">2. The Information We Collect</h2>
                     <p className="mb-4">
-                        We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Website, or otherwise when you contact us. This may include:
+                        We collect information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Website, or otherwise when you contact us. This may include your name, email address, phone number, and business details. We also automatically collect certain information when you visit the site, such as your IP address and browsing activities.
                     </p>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li>Names and contact information (email, phone number).</li>
@@ -45,8 +45,7 @@ export default function PrivacyPolicy() {
                     </ul>
 
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">3. How We Use Your Information</h2>
-                    <p className="mb-4">
-                        We use the personal information collected via our website for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.
+                    <p className="mb-4">We act as a &quot;data processor&quot; for the information you provide about your clients, and a &quot;data controller&quot; for the information you provide about your own business. We comply with all applicable privacy laws. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.
                     </p>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li>To provide, operate, and maintain our website.</li>
@@ -66,13 +65,11 @@ export default function PrivacyPolicy() {
                         <li><strong>Data Protection Officer:</strong> We have designated a person responsible for the protection of personal information.</li>
                         <li><strong>Right to be Forgotten:</strong> You have the right to request the deletion of your personal data from our systems.</li>
                         <li><strong>Data Portability:</strong> You have the right to request a copy of your computerized personal information.</li>
-                        <li><strong>Breach Notification:</strong> In the event of a confidentiality incident involving a risk of serious injury, we will notify the Commission d'accès à l'information (CAI) and the persons concerned.</li>
+                        <li><strong>Breach Notification:</strong> In the event of a confidentiality incident involving a risk of serious injury, we will notify the Commission d&apos;accès à l&apos;information (CAI) and the persons concerned.</li>
                     </ul>
 
                     <h2 className="text-2xl font-bold text-white mt-12 mb-4">5. Contact Us</h2>
-                    <p className="mb-6">
-                        If you have questions or comments about this notice, you may email our Data Protection Officer at <strong>privacy@jlaw360marketing.com</strong>.
-                    </p>
+                    <p className="mb-4">In accordance with Quebec&apos;s Law 25, we have appointed a Privacy Officer responsible for ensuring compliance with this legislation. If you have any questions or concerns about our privacy practices or wish to exercise your rights regarding your personal information, please contact our Privacy Officer at <a href="mailto:privacy@jlaw360marketing.com" className="text-[var(--color-teal)] hover:underline">privacy@jlaw360marketing.com</a>.</p>
                 </div>
             </div>
         </main>

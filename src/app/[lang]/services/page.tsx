@@ -12,13 +12,15 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
   const icons = [
-    <Users className="w-8 h-8 text-[var(--color-gold)] mb-6" />,
-    <BarChart3 className="w-8 h-8 text-[var(--color-teal)] mb-6" />,
-    <Zap className="w-8 h-8 text-[var(--color-gold)] mb-6" />,
-    <Code2 className="w-8 h-8 text-[var(--color-teal)] mb-6" />
+    <Users key="users" className="w-8 h-8 text-[var(--color-gold)] mb-6" />,
+    <BarChart3 key="chart" className="w-8 h-8 text-[var(--color-teal)] mb-6" />,
+    <Zap key="zap" className="w-8 h-8 text-[var(--color-gold)] mb-6" />,
+    <Code2 key="code" className="w-8 h-8 text-[var(--color-teal)] mb-6" />
   ]
 
-  const services = dict.services.services_list.map((service: any, index: number) => ({
+  type ServiceData = { title: string; description: string; features: string[] };
+
+  const services = dict.services.services_list.map((service: ServiceData, index: number) => ({
     ...service,
     icon: icons[index]
   }))

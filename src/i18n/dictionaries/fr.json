@@ -452,8 +452,19 @@
       "génération de leads",
       "tunnels de vente",
       "automatisation IA",
-      "SEO bilingue",
-      "stratégie marketing digital"
+      "SEO bilingue"
     ]
+  },
+  "login": {
+    "return": "Retour",
+    "title": "Accès au Portail Client",
+    "desc": "Saisissez vos identifiants d'habilitation pour visualiser votre tableau de bord de données en direct.",
+    "email_label": "Autorisation Email",
+    "email_placeholder": "executif@entreprise.com",
+    "pass_label": "Code d'Accès Sécurisé",
+    "pass_placeholder": "••••••••••••",
+    "btn_login": "Initialiser la Session",
+    "btn_signup": "Demander l'Autorisation",
+    "secure": "Connexion Sécurisée Établie"
   }
 }

@@ -11,12 +11,12 @@ function getLocale(request: NextRequest): string | undefined {
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
 
   // use negotiator and intl-localematcher to get best locale
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages()
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages()
   // match locale
   const locales: string[] = [...i18n.locales]
   try {
     return matchLocale(languages, locales, i18n.defaultLocale)
-  } catch (e) {
+  } catch {
     return i18n.defaultLocale
   }
 }

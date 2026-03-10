@@ -6,7 +6,9 @@ export const metadata = {
   description: "Merci pour votre intérêt. Votre audit est en cours de préparation.",
 }
 
-export default function ThankYouPage() {
+export default async function ThankYouPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  
   return (
     <div className="min-h-screen bg-[#020507] flex items-center justify-center p-4 relative overflow-hidden">
       
@@ -29,10 +31,12 @@ export default function ThankYouPage() {
         <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
           Audit Initié. <br/> <span className="text-[var(--color-teal)]">Merci pour votre intérêt.</span>
         </h1>
-        
-        <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
-          Vos informations ont été transmises avec succès à l'équipe JLAW 360. 
-          Veuillez vérifier votre boîte de réception d'ici quelques minutes pour les prochaines étapes de notre protocole de croissance.
+        <p className="text-gray-400 mb-8 max-w-lg mx-auto">While you wait, check your email for access to the custom insights generator. We&apos;ve sent over the initial details.</p>
+        <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+            We&apos;ve received your request and our systems are processing it now. analyzing your brand&apos;s digital footprint.
+          <br/><br/>
+          A JLAW 360 Growth Architect will be in touch shortly to schedule your personalized strategy session. 
+          In the meantime, feel free to explore our <Link href={`/${lang}/services`} className="text-[var(--color-teal)] hover:underline border-b border-transparent hover:border-[var(--color-teal)] transition">Marketing Architecture Services</Link>.
         </p>
 
         <div className="cyber-glass p-8 rounded-2xl border border-gray-800 flex flex-col sm:flex-row justify-center items-center gap-4 mb-12 shadow-2xl">

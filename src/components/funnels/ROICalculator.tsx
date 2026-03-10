@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calculator, ArrowRight, TrendingUp, Users, DollarSign, Target } from "lucide-react";
 
-export default function ROICalculator({ dict }: { dict?: any }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ROICalculator({ dict }: { dict: Record<string, any> }) {
   const [visitors, setVisitors] = useState<number>(1000);
   const [conversionRate, setConversionRate] = useState<number>(3);
   const [closeRate, setCloseRate] = useState<number>(20);

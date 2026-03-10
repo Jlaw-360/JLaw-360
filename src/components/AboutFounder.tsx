@@ -107,10 +107,11 @@ export default function AboutFounder() {
                         </div>
 
                         {/* CTA */}
-                        <Link
-                            href="#hero"
-                            className="group inline-flex items-center gap-2 mt-8 px-6 py-3 bg-gold text-black font-bold text-sm rounded-xl hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20"
-                        >
+                            <Link
+                                href="https://calendly.com/your-calendly-link"
+                                target="_blank"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[var(--color-gold)] to-[#F2D780] text-[var(--color-navy)] font-bold text-lg rounded-xl shadow-[0_0_20px_rgba(212,182,115,0.3)] hover:scale-105 hover:shadow-[0_0_30px_rgba(212,182,115,0.5)] transition"
+                            >
                             Let&apos;s Build Your Ecosystem
                             <ArrowRight
                                 size={16}

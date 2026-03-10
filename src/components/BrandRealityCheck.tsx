@@ -2,11 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle, Activity, Loader, Crosshair, Target, Shield } from "lucide-react";
+import { useRouter, useParams } from "next/navigation";
+import { Activity, Loader, Crosshair, Target, Shield } from "lucide-react";
 
 export default function BrandRealityCheck() {
+  const router = useRouter();
+  const params = useParams();
+  const lang = params?.lang || "en";
+  
   const [step, setStep] = useState(0);
-  const [isProcessing, setIsProcessing] = useState(false);
   const [answers, setAnswers] = useState({
     industry: "",
     leadGen: "",
@@ -19,10 +23,8 @@ export default function BrandRealityCheck() {
   };
 
   const handleProcessAndScore = () => {
-    setIsProcessing(true);
     setStep(4);
     setTimeout(() => {
-      setIsProcessing(false);
       setStep(5);
     }, 2500);
   };
@@ -200,7 +202,7 @@ export default function BrandRealityCheck() {
               <div className="bg-black/50 border border-gray-800 p-4 rounded-xl text-left mb-8">
                 <div className="flex items-start gap-3 mb-3">
                    <Crosshair className="text-[var(--color-gold)] mt-0.5" size={18} />
-                   <p className="text-sm text-gray-300 font-light">Because you rely on <strong className="text-white">"{answers.leadGen}"</strong>, your growth is capped and highly unpredictable.</p>
+                   <p className="text-sm text-gray-300 font-light">Because you rely on <strong className="text-white">&quot;{answers.leadGen}&quot;</strong>, your growth is capped and highly unpredictable.</p>
                 </div>
                 <div className="flex items-start gap-3">
                    <Crosshair className="text-[var(--color-gold)] mt-0.5" size={18} />
@@ -221,7 +223,10 @@ export default function BrandRealityCheck() {
                       value={answers.email}
                       onChange={(e) => setAnswers({...answers, email: e.target.value})}
                     />
-                    <button className="neon-btn-gold px-6 py-3 rounded-lg font-bold text-sm shadow-[0_0_15px_rgba(205,166,81,0.2)]">
+                    <button 
+                      onClick={() => router.push(`/${lang}/thankyou`)}
+                      className="neon-btn-gold px-6 py-3 rounded-lg font-bold text-sm shadow-[0_0_15px_rgba(205,166,81,0.2)]"
+                    >
                       Send My Roadmap
                     </button>
                   </div>

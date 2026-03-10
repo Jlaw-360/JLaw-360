@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Play, Terminal, Cpu, Database } from "lucide-react";
+import { ArrowRight, Terminal, Cpu, Database } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ lang = 'en' }: { lang?: string }) {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
     const y2 = useTransform(scrollY, [0, 1000], [0, -100]);
@@ -99,15 +99,16 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Link
-                        href="#offers"
-                        className="group relative px-8 py-4 w-full sm:w-auto overflow-hidden rounded-xl bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-gold-muted)] text-[#050A0E] font-extrabold text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(205,166,81,0.5)] flex items-center justify-center gap-3"
+                    <Link 
+                        href="https://calendly.com/your-calendly-link"
+                        target="_blank"
+                        className="group relative px-8 py-4 w-full sm:w-auto overflow-hidden rounded-xl bg-gradient-to-r from-[var(--color-gold)] to-[#F2D780] text-[#050A0E] font-extrabold text-sm uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(205,166,81,0.5)] flex items-center justify-center gap-3"
                     >
                         <span className="absolute inset-0 w-full h-full bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -skew-x-12 -ml-4" />
                         Initialize Strategy <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    <Link
-                        href="#process"
+                    <Link 
+                        href={`/${lang}/services`}
                         className="group px-8 py-4 w-full sm:w-auto border border-gray-700 text-gray-300 font-bold text-sm uppercase tracking-widest rounded-xl hover:border-[var(--color-teal)] hover:text-white hover:bg-[var(--color-teal)]/10 transition-all duration-300 flex items-center justify-center gap-3"
                     >
                         <Cpu size={18} className="text-[var(--color-teal)] group-hover:animate-pulse" />

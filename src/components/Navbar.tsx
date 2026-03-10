@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Menu, X, Lock } from "lucide-react";
 import { motion } from "framer-motion";
+import type { Locale } from "@/i18n/config";
 
-export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Navbar({ lang, dict }: { lang: Locale; dict: Record<string, any> }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
@@ -49,8 +52,8 @@ export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
         >
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
-                <Link href={`/${lang}`} className="flex items-center gap-2 group">
-                    <img src="/logo.png" alt="JLAW 360 Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-md" />
+                <Link href={`/${lang}`} className="flex items-center gap-2 group relative w-32 h-12">
+                    <Image src="/logo.png" alt="JLAW 360 Logo" fill className="object-contain transition-transform group-hover:scale-105 drop-shadow-md" sizes="(max-width: 768px) 100vw, 128px" priority />
                 </Link>
 
                 {/* Desktop Nav */}

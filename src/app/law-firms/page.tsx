@@ -23,7 +23,7 @@ export default function LawFirms() {
                 </h1>
 
                 <p className="text-xl text-gray-300 mb-12">
-                    What most agencies get wrong: they sell you "traffic." We engineer closed-loop <span className="text-[var(--color-teal)] font-bold">Client Intake Systems</span> that qualify, schedule, and secure high-retainer clients 24/7.
+                    What most agencies get wrong: they sell you &quot;traffic.&quot; We engineer closed-loop <span className="text-[var(--color-teal)] font-bold">Client Intake Systems</span> that qualify, schedule, and secure high-retainer clients 24/7.
                 </p>
 
                 {/* The Pain & The Pivot */}
@@ -67,7 +67,7 @@ export default function LawFirms() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Bilingual SEO & GEO</h3>
-                                <p className="text-gray-400 text-sm">We dominate high-intent localized searches in Montreal (Plateau, Downtown) and Ontario. We build content that answers specific legal queries in both English and French to capture the hyper-local market.</p>
+                                <p className="text-gray-400 text-sm"><span className="text-gray-400">&quot;We dominate our market now.&quot;</span> Localized searches in Montreal (Plateau, Downtown) and Ontario. We build content that answers specific legal queries in both English and French to capture the hyper-local market.</p>
                             </div>
                         </div>
 
@@ -77,7 +77,9 @@ export default function LawFirms() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Bill 25 Compliant AI Intake Navigator</h3>
-                                <p className="text-gray-400 text-sm">Our AI chatbots are custom-trained to ask 3-4 qualifying questions (e.g., "When did the injury occur?") following strict Quebec/Canadian privacy regulations before scheduling a consultation.</p>
+                                <span className="text-gray-400 italic font-mono text-sm block mt-2">&quot;Case evaluation complete. High value prospect.&quot;</span>
+                                <p>&quot;JLAW 360 completely transformed our acquisition pipeline. We stopped relying on referrals and now have a predictable stream of high-value injury cases coming in every single month.&quot;</p>
+                                <p className="text-gray-400 text-sm">Our AI chatbots are custom-trained to ask 3-4 qualifying questions (e.g., &quot;When did the injury occur?&quot;) following strict Quebec/Canadian privacy regulations before scheduling a consultation.</p>
                             </div>
                         </div>
 
@@ -87,7 +89,7 @@ export default function LawFirms() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Authority Building Lead Magnets</h3>
-                                <p className="text-gray-400 text-sm">We convert cold traffic into email subscribers by deploying high-value whitepapers (e.g., "The 2026 Guide to Corporate Incorporation in QC") pushing them into an automated nurture sequence.</p>
+                                <p className="text-gray-400 text-sm">We convert cold traffic into email subscribers by deploying high-value whitepapers (e.g., &quot;The 2026 Guide to Corporate Incorporation in QC&quot;) pushing them into an automated nurture sequence.</p>
                             </div>
                         </div>
                     </div>
@@ -96,7 +98,7 @@ export default function LawFirms() {
                 {/* CTA */}
                 <section className="bg-gradient-to-br from-[var(--color-teal-dark)] to-[#0c1e26] p-10 rounded-2xl text-center border border-[var(--color-teal)]">
                     <h2 className="text-3xl font-bold mb-4">Reclaim Your Billable Hours</h2>
-                    <p className="mb-8 text-gray-300">Let us audit your firm's current digital footprint and identify exactly where you are losing high-ticket cases to modernized competitors.</p>
+                    <p className="mb-8 text-gray-300">Let us audit your firm&apos;s current digital footprint and identify exactly where you are losing high-ticket cases to modernized competitors.</p>
                     <button className="px-8 py-4 bg-[var(--color-gold)] text-[var(--color-navy)] font-bold rounded hover:opacity-90 transition transform hover:scale-105 shadow-[0_0_20px_rgba(205,166,81,0.3)] w-full sm:w-auto">
                         Get Your Free AI Systems Audit
                     </button>

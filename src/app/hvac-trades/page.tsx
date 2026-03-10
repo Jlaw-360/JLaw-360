@@ -23,17 +23,17 @@ export default function HVACTrades() {
                 </h1>
 
                 <p className="text-xl text-gray-300 mb-12">
-                    What most agencies get wrong: they sell you "branding." We engineer <span className="text-[var(--color-teal)] font-bold">Speed-to-Lead Dispatch Systems</span> that ensure you are the only option when a furnace breaks at 2 AM in Montreal.
+                    What most agencies get wrong: they sell you &quot;branding.&quot; We engineer <span className="text-[var(--color-teal)] font-bold">Speed-to-Lead Dispatch Systems</span> that ensure you are the only option when a furnace breaks at 2 AM in Montreal.
                 </p>
 
                 {/* The Pain & The Pivot */}
                 <section className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 mb-16">
                     <h2 className="text-2xl font-bold mb-4">The Productivity Gap in Home Services</h2>
-                    <p className="text-gray-400 mb-6">78% of emergency jobs go to the company that responds first. If your website doesn't instantly book and qualify the lead, you lose the job to a competitor.</p>
+                    <p className="text-gray-400 mb-6">78% of emergency jobs go to the company that responds first. If your website doesn&apos;t instantly book and qualify the lead, you lose the job to a competitor.</p>
                     <div className="flex gap-4">
                         <div className="bg-red-500/10 border border-red-500/20 p-4 rounded w-1/2">
                             <span className="block text-red-400 font-bold mb-1">Old Way</span>
-                            <span className="text-sm text-gray-300">"Free Estimate" form that goes to an unmonitored inbox. Invisible on Google Maps for neighboring towns.</span>
+                            <span className="text-sm text-gray-300">&quot;Free Estimate&quot; form that goes to an unmonitored inbox. Invisible on Google Maps for neighboring towns.</span>
                         </div>
                         <div className="bg-[var(--color-teal)]/10 border border-[var(--color-teal)]/20 p-4 rounded w-1/2">
                             <span className="block text-[var(--color-teal)] font-bold mb-1">JLAW 360 Way</span>
@@ -67,7 +67,7 @@ export default function HVACTrades() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Neighborhood-Level SEO (GEO)</h3>
-                                <p className="text-gray-400 text-sm">We don't just target "Montreal". We dominate micro-markets: Plateau Mont-Royal, NDG, Westmount, and across Ontario (Mississauga, Oakville). We build English & French programmatic pages for every service in every postal code.</p>
+                                <p className="text-gray-400 text-sm">We don&apos;t just target &quot;Montreal&quot;. We dominate micro-markets: Plateau Mont-Royal, NDG, Westmount, and across Ontario (Mississauga, Oakville). We build English & French programmatic pages for every service in every postal code.</p>
                             </div>
                         </div>
 
@@ -77,7 +77,7 @@ export default function HVACTrades() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Automated Emergency AI Dispatch</h3>
-                                <p className="text-gray-400 text-sm">Our AI chatbot lives on your site. Visitor: "My furnace stopped working in NDG." AI: "Is it making noise? I can book a technician within 2 hours." It captures the lead before they can click back to Google.</p>
+                                <p className="text-gray-400 text-sm">Our AI chatbot lives on your site. Visitor: &quot;My furnace stopped working in NDG.&quot; AI: &quot;Is it making noise? I can book a technician within 2 hours.&quot; It captures the lead before they can click back to Google.</p>
                             </div>
                         </div>
 
