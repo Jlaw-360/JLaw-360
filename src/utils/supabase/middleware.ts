@@ -6,7 +6,15 @@ export async function updateSession(request: NextRequest) {
     request,
   })
 
-  const supabase = createServerClient(
+  // Fallback for Vercel: If environment variables are missing, do not crash the website.
+  // This allows the public marketing pages to load even if the database isn't connected yet.
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    console.warn('Supabase Environment Variables are missing! Auth pages will fail, but marketing pages will survive.');
+    return supabaseResponse;
+  }
+
+  try {
+    const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -44,6 +52,10 @@ export async function updateSession(request: NextRequest) {
     const url = request.nextUrl.clone()
     url.pathname = '/dashboard'
     return NextResponse.redirect(url)
+  }
+
+  } catch (err) {
+    console.error("Supabase middleware error:", err)
   }
 
   return supabaseResponse
