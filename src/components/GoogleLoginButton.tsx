@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 
-export default function GoogleLoginButton({ text = "Login with Google" }: { text?: string }) {
+export default function GoogleLoginButton({ text = "Login with Google", nextUrl = "/en/dashboard" }: { text?: string, nextUrl?: string }) {
   const supabase = createClient();
   const [loading, setLoading] = useState(false);
 
@@ -13,7 +13,7 @@ export default function GoogleLoginButton({ text = "Login with Google" }: { text
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: `${window.location.origin}/auth/callback?next=${nextUrl}`,
       },
     });
 

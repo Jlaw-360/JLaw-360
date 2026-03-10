@@ -81,7 +81,7 @@ export default async function LoginPage({ params }: { params: Promise<{ lang: st
                 <div className="flex-1 h-px bg-gray-800"></div>
               </div>
 
-              <GoogleLoginButton text={dict.login?.btn_google || "Continue with Google"} />
+              <GoogleLoginButton text={dict.login?.btn_google || "Continue with Google"} nextUrl={`/${lang}/dashboard`} />
             </div>
           </form>
 
