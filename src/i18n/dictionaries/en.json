@@ -457,7 +457,7 @@
   },
   "login": {
     "return": "Return",
-    "title": "Join Now or Log In",
+    "title": "Log In and Sign Up",
     "desc": "Enter your clearance credentials to view your live data dashboard.",
     "email_label": "Email Authorization",
     "email_placeholder": "executive@company.com",

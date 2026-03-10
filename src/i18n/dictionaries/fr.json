@@ -457,7 +457,7 @@
   },
   "login": {
     "return": "Retour",
-    "title": "Inscrivez-vous ou Connectez-vous",
+    "title": "Connexion et Inscription",
     "desc": "Saisissez vos identifiants d'habilitation pour visualiser votre tableau de bord de données en direct.",
     "email_label": "Autorisation Email",
     "email_placeholder": "executif@entreprise.com",
