@@ -27,7 +27,6 @@ export default function Navbar({ lang, dict }: { lang: Locale; dict: Record<stri
         { name: dict.home, href: `/${lang}` },
         { name: dict.services, href: `/${lang}/services` },
         { name: dict.about, href: `/${lang}/about` },
-        { name: dict.niches, href: `/${lang}/#niches` },
         { name: dict.realityCheck || "Reality Check", href: `/${lang}/reality-check` },
     ];
 

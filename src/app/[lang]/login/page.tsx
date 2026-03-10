@@ -3,6 +3,7 @@ import { ArrowLeft, Lock } from 'lucide-react'
 import Link from 'next/link'
 import { getDictionary } from '@/i18n/get-dictionary'
 import type { Locale } from '@/i18n/config'
+import GoogleLoginButton from '@/components/GoogleLoginButton'
 
 export default async function LoginPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -73,6 +74,14 @@ export default async function LoginPage({ params }: { params: Promise<{ lang: st
               >
                 {dict.login?.btn_signup || "Request Authorization"}
               </button>
+
+              <div className="flex items-center gap-4 py-2">
+                <div className="flex-1 h-px bg-gray-800"></div>
+                <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">OR</span>
+                <div className="flex-1 h-px bg-gray-800"></div>
+              </div>
+
+              <GoogleLoginButton text={dict.login?.btn_google || "Continue with Google"} />
             </div>
           </form>
 

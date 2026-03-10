@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter, useParams } from "next/navigation";
-import { Activity, Loader, Crosshair, Target, Shield } from "lucide-react";
+import { Activity, Loader, Crosshair, Target, Shield, Loader2 } from "lucide-react";
+import { createClient } from "@/utils/supabase/client";
 
 export default function BrandRealityCheck() {
   const router = useRouter();
@@ -12,21 +13,48 @@ export default function BrandRealityCheck() {
   
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({
-    industry: "",
     leadGen: "",
     speedToLead: "",
     email: ""
   });
+
+  const [submitting, setSubmitting] = useState(false);
+  const supabase = createClient();
 
   const nextStep = () => {
     setStep((prev) => prev + 1);
   };
 
   const handleProcessAndScore = () => {
-    setStep(4);
+    setStep(3);
     setTimeout(() => {
-      setStep(5);
+      setStep(4);
     }, 2500);
+  };
+
+  const handleSubmitLead = async () => {
+    if (!answers.email) return;
+    setSubmitting(true);
+
+    try {
+      const { error } = await supabase.from('leads').insert([
+        {
+          email: answers.email,
+          lead_gen_method: answers.leadGen,
+          speed_to_lead: answers.speedToLead
+        }
+      ]);
+
+      if (error) {
+        console.error("Supabase Insert Error:", error.message);
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err);
+    } finally {
+      // Regardless of DB success/fail (e.g. if RLS blocks it because they haven't set it up yet),
+      // we push them to the thank you page to maintain funnel flow.
+      router.push(`/${lang}/thankyou`);
+    }
   };
 
   // The actual questions
@@ -42,11 +70,11 @@ export default function BrandRealityCheck() {
         <p className="text-sm text-[var(--color-sand)] mt-2 font-medium">Find out exactly where your digital presence is leaking revenue.</p>
         
         {/* Progress Bar */}
-        {step < 4 && (
+        {step < 3 && (
           <div className="w-full h-1.5 bg-black/50 rounded-full mt-6 overflow-hidden relative">
             <div 
               className="absolute left-0 top-0 h-full bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-gold)]"
-              style={{ width: `${(step / 3) * 100}%`, transition: "width 0.4s ease-in-out" }}
+              style={{ width: `${(step / 2) * 100}%`, transition: "width 0.4s ease-in-out" }}
             ></div>
           </div>
         )}
@@ -77,7 +105,7 @@ export default function BrandRealityCheck() {
             </motion.div>
           )}
 
-          {/* STEP 1: Industry */}
+          {/* STEP 1: Lead Gen */}
           {step === 1 && (
             <motion.div
               key="step1"
@@ -86,31 +114,7 @@ export default function BrandRealityCheck() {
               exit={{ opacity: 0, x: -20 }}
               className="flex flex-col h-full"
             >
-              <h3 className="text-xl font-bold text-white mb-6">1. What is your primary industry?</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {["Law Firm", "HVAC / Trades", "Real Estate", "Manufacturing B2B", "E-Commerce", "Other"].map((ind) => (
-                  <button 
-                    key={ind}
-                    onClick={() => { setAnswers({...answers, industry: ind}); nextStep(); }}
-                    className="p-4 border border-gray-700 bg-black/40 hover:bg-[var(--color-teal-dark)]/50 hover:border-[var(--color-teal)] text-gray-300 hover:text-white rounded-lg transition text-left font-medium"
-                  >
-                    {ind}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* STEP 2: Lead Gen */}
-          {step === 2 && (
-            <motion.div
-              key="step2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="flex flex-col h-full"
-            >
-              <h3 className="text-xl font-bold text-white mb-6">2. How are you currently getting the majority of your leads?</h3>
+              <h3 className="text-xl font-bold text-white mb-6">1. How are you currently getting the majority of your leads?</h3>
               <div className="flex flex-col gap-4">
                 {[
                   { id: "word-of-mouth", text: "Word of Mouth / Referrals (Unpredictable)" },
@@ -130,8 +134,8 @@ export default function BrandRealityCheck() {
             </motion.div>
           )}
 
-          {/* STEP 3: Speed to Lead */}
-          {step === 3 && (
+          {/* STEP 2: Speed to Lead */}
+          {step === 2 && (
             <motion.div
               key="step3"
               initial={{ opacity: 0, x: 20 }}
@@ -139,7 +143,7 @@ export default function BrandRealityCheck() {
               exit={{ opacity: 0, x: -20 }}
               className="flex flex-col h-full"
             >
-              <h3 className="text-xl font-bold text-white mb-6">3. What happens when a potential client reaches out on your website at 2:00 AM?</h3>
+              <h3 className="text-xl font-bold text-white mb-6">2. What happens when a potential client reaches out on your website at 2:00 AM?</h3>
               <div className="flex flex-col gap-4">
                 {[
                   { id: "nothing", text: "They fill a form & hear nothing until the next day." },
@@ -159,8 +163,8 @@ export default function BrandRealityCheck() {
             </motion.div>
           )}
 
-          {/* STEP 4: Processing (Fake Loading State) */}
-          {step === 4 && (
+          {/* STEP 3: Processing (Fake Loading State) */}
+          {step === 3 && (
             <motion.div
               key="step4"
               initial={{ opacity: 0 }}
@@ -176,15 +180,15 @@ export default function BrandRealityCheck() {
                   <div className="h-full bg-[var(--color-teal)] animate-pulse" style={{width: '70%'}}></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-mono">
-                  <span>Analyzing {answers.industry} competitors...</span>
+                  <span>Analyzing market competitors...</span>
                   <span>70%</span>
                 </div>
               </div>
             </motion.div>
           )}
 
-          {/* STEP 5: Results & Lead Capture */}
-          {step === 5 && (
+          {/* STEP 4: Results & Lead Capture */}
+          {step === 4 && (
             <motion.div
               key="step5"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -206,7 +210,7 @@ export default function BrandRealityCheck() {
                 </div>
                 <div className="flex items-start gap-3">
                    <Crosshair className="text-[var(--color-gold)] mt-0.5" size={18} />
-                   <p className="text-sm text-gray-300 font-light">Your Speed-to-Lead protocol fails after normal hours, guaranteeing that motivated 2 AM leads will bounce to an {answers.industry} competitor.</p>
+                   <p className="text-sm text-gray-300 font-light">Your Speed-to-Lead protocol fails after normal hours, guaranteeing that motivated 2 AM leads will bounce to a competitor.</p>
                 </div>
               </div>
 
@@ -224,10 +228,11 @@ export default function BrandRealityCheck() {
                       onChange={(e) => setAnswers({...answers, email: e.target.value})}
                     />
                     <button 
-                      onClick={() => router.push(`/${lang}/thankyou`)}
-                      className="neon-btn-gold px-6 py-3 rounded-lg font-bold text-sm shadow-[0_0_15px_rgba(205,166,81,0.2)]"
+                      onClick={handleSubmitLead}
+                      disabled={submitting || !answers.email}
+                      className="neon-btn-gold px-6 py-3 rounded-lg font-bold text-sm shadow-[0_0_15px_rgba(205,166,81,0.2)] disabled:opacity-50 flex justify-center items-center"
                     >
-                      Send My Roadmap
+                      {submitting ? <Loader2 size={18} className="animate-spin" /> : "Send My Roadmap"}
                     </button>
                   </div>
                   <p className="text-[10px] text-gray-500 mt-3 flex items-center justify-center gap-1">

@@ -22,16 +22,6 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Record<stri
                     </div>
                 </div>
 
-                {/* Niche Solutions */}
-                <div>
-                    <h4 className="text-lg font-bold mb-6 text-white tracking-wide">{dict.niches_title}</h4>
-                    <ul className="space-y-4 text-sm text-gray-400">
-                        <li><Link href={`/${lang}/law-firms`} className="hover:text-[var(--color-teal)] transition">Law Firms & Attorneys</Link></li>
-                        <li><Link href={`/${lang}/hvac-trades`} className="hover:text-[var(--color-teal)] transition">HVAC & Residential Trades</Link></li>
-                        <li><Link href={`/${lang}/real-estate`} className="hover:text-[var(--color-teal)] transition">Real Estate & Property Mgmt</Link></li>
-                        <li><Link href={`/${lang}/manufacturing-b2b`} className="hover:text-[var(--color-teal)] transition">Manufacturing B2B</Link></li>
-                    </ul>
-                </div>
 
                 {/* Services */}
                 <div>

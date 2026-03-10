@@ -465,6 +465,7 @@
     "pass_placeholder": "••••••••••••",
     "btn_login": "Initialize Session",
     "btn_signup": "Request Authorization",
+    "btn_google": "Continue with Google",
     "secure": "Secure Connection Established"
   }
 }

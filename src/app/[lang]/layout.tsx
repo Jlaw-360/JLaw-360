@@ -110,9 +110,9 @@ export default async function RootLayout({
             })
           }}
         />
-        <Navbar dict={dict.navigation} lang={lang} />
+        <Navbar dict={dict.navigation} lang={lang as Locale} />
         {children}
-        <Footer dict={dict.footer} lang={lang} />
+        <Footer dict={dict.footer} lang={lang as Locale} />
         <LeadMagnetModal />
         <ChatWidget />
       </body>
