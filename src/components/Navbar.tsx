@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Menu, X, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -10,6 +10,7 @@ export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
+    const searchParams = useSearchParams();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,13 +25,16 @@ export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
         { name: dict.services, href: `/${lang}/services` },
         { name: dict.about, href: `/${lang}/about` },
         { name: dict.niches, href: `/${lang}/#niches` },
+        { name: dict.realityCheck || "Reality Check", href: `/${lang}/reality-check` },
     ];
 
     const switchLang = (targetLang: string) => {
         if (!pathname) return `/${targetLang}`;
         const segments = pathname.split('/');
         segments[1] = targetLang;
-        return segments.join('/');
+        const newPath = segments.join('/');
+        const search = searchParams?.toString();
+        return search ? `${newPath}?${search}` : newPath;
     };
 
     return (

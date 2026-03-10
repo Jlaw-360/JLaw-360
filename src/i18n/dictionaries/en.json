@@ -5,7 +5,8 @@
     "about": "About",
     "niches": "Niches",
     "portal": "Portal",
-    "audit_btn": "Free Audit"
+    "audit_btn": "Free Audit",
+    "realityCheck": "Reality Check"
   },
   "hero": {
     "badge": "Protocol 2026 Active",
@@ -103,5 +104,356 @@
     "cta_title": "Ready to dominate your market?",
     "cta_subtitle": "Book a complete audit of your current ecosystem (Value: $500 - Offered).",
     "cta_btn": "Request My Audit"
+  },
+  "homePage": {
+    "hero": {
+      "badge": "Interactive Growth Platform for Service Businesses",
+      "h1_1": "Turn Your Service Business",
+      "h1_2": "Into a Lead Machine",
+      "sub": "See How Much Revenue Your Business Is Losing Without a Proper Lead Generation System. Stop guessing and start dominating your local market.",
+      "btn_calc": "Calculate Lost Revenue",
+      "btn_strategy": "Generate Growth Strategy"
+    },
+    "industries": {
+      "badge": "Specialized Solutions",
+      "title_1": "Engineered For",
+      "title_2": "Elite Niches",
+      "items": [
+        {
+          "title": "Roofing Companies",
+          "desc": "Storm chasing & organic local SEO dominance."
+        },
+        {
+          "title": "HVAC Companies",
+          "desc": "Emergency calls & automated dispatch routing."
+        },
+        {
+          "title": "Dental Clinics",
+          "desc": "High-ticket implants & Invisalign patient funnels."
+        },
+        {
+          "title": "Landscaping",
+          "desc": "Commercial contracts & luxury residential builds."
+        }
+      ]
+    },
+    "pain_points": {
+      "title_1": "Why Your Competitors Are",
+      "title_2": "Stealing Your Jobs",
+      "sub": "Most service businesses rely on word-of-mouth or outdated directory sites. Here is exactly where your lead funnel is leaking money right now.",
+      "items": [
+        {
+          "title": "No Conversion Optimized Website",
+          "desc": "Your site looks like a brochure instead of a 24/7 sales rep."
+        },
+        {
+          "title": "Zero Keyword Dominance",
+          "desc": "You aren't ranking for 'Emergency [Service] Near Me' when people need you most."
+        },
+        {
+          "title": "Slow Lead Response Time",
+          "desc": "If you don't call a web lead within 5 minutes, close rates drop by 80%. You have no automation."
+        },
+        {
+          "title": "Relying on Shared Lead Providers",
+          "desc": "Paying Angi/HomeAdvisor for a lead that gets sold to 5 other competitors."
+        }
+      ],
+      "solution_title": "We Fix The Leaks.",
+      "solution_items": [
+        "Custom Landing Page Funnels",
+        "Instant AI SMS & Email Follow-Ups",
+        "Exclusive High-Intent Leads"
+      ]
+    },
+    "footer_cta": {
+      "title_1": "Ready to Dominate",
+      "title_2": "Your Local Market?",
+      "sub": "Stop competing on price. Partner with a strategic growth agency that builds predictable lead generation systems.",
+      "btn": "Book Your Free Strategy Call"
+    }
+  },
+  "calculator": {
+    "badge": "Interactive ROI Calculator",
+    "title_1": "See How Much Revenue You're",
+    "title_2": "Losing",
+    "sub": "Enter your current numbers below to see what happens when you install a proper Lead Generation System.",
+    "labels": {
+      "visitors": "Monthly Website Visitors",
+      "convRate": "Website Conversion Rate",
+      "closeRate": "Lead Close Rate",
+      "jobValue": "Average Job Value"
+    },
+    "currentSys": {
+      "title": "Your Current System",
+      "leads": "Monthly Leads",
+      "clients": "New Clients",
+      "clients_per_mo": " /mo",
+      "monthlyRev": "Monthly Revenue:"
+    },
+    "jlawSys": {
+      "badge": "JLAW 360 System",
+      "title": "With Optimized Funnel",
+      "leads": "Monthly Leads",
+      "clients": "New Clients",
+      "clients_per_mo": " /mo",
+      "monthlyRev": "Monthly Revenue:"
+    },
+    "reveal": {
+      "text1": "By fixing your leaky funnel, you could generate an additional",
+      "text2": "In Missed Revenue Per Year",
+      "btn": "Fix My Lead Flow"
+    }
+  },
+  "generator": {
+    "landing": {
+      "title_1": "Stop Guessing.",
+      "title_2": "Get Your",
+      "title_3": "Custom Growth Blueprint.",
+      "sub": "Answer 5 quick questions about your business and we'll instantly generate the exact digital marketing architecture you need to dominate your market.",
+      "btn": "Generate My Growth Strategy"
+    },
+    "steps": {
+      "step": "Step",
+      "of": "of 5",
+      "back": "Back",
+      "continue": "Continue",
+      "analyzing": "Analyzing {industry} Market in {city}...",
+      "analyzing_sub": "Compiling your Digital Blueprint based on current revenue and goals.",
+      "start_over": "Start Over"
+    },
+    "q1": {
+      "title": "What is your primary industry?",
+      "options": [
+        "Roofing",
+        "HVAC",
+        "Dental",
+        "Landscaping",
+        "Other Home Service"
+      ]
+    },
+    "q2": {
+      "title": "What city are you targeting?",
+      "placeholder": "e.g. Toronto, ON"
+    },
+    "q3": {
+      "title": "What's your current monthly revenue?",
+      "options": [
+        "Under $10k/mo",
+        "$10k - $50k/mo",
+        "$50k - $150k/mo",
+        "$150k+/mo"
+      ]
+    },
+    "q4": {
+      "title": "Where do most of your leads come from today?",
+      "options": [
+        "Referrals (Word of Mouth)",
+        "Buying Shared Leads (Angi/HomeAdvisor)",
+        "Google Ads",
+        "Organic/SEO",
+        "Social Media"
+      ]
+    },
+    "q5": {
+      "title": "What is your main goal for the next 12 months?",
+      "options": [
+        "Get more consistent leads",
+        "Increase quality of jobs (high-ticket)",
+        "Automate my sales process",
+        "Scale to the next revenue tier"
+      ]
+    },
+    "result": {
+      "badge": "Ready for Implementation",
+      "title": "Your Custom Digital Blueprint",
+      "desc_start": "Based on your goal to ",
+      "desc_mid": ", here is the exact architecture we recommend for your ",
+      "desc_end": " business in ",
+      "proj": "Projected Result",
+      "s1": {
+        "title": "1. Conversion-Optimized Funnel",
+        "desc": "Replace your standard website with a direct-response landing page designed specifically to convert {city} traffic into booked appointments.",
+        "res": "+120% Conversion Rate"
+      },
+      "s2": {
+        "title": "2. High-Intent Google Ads",
+        "desc": "Capture high-intent searches like \\\"{industry} near me in {city}\\\" with aggressive local ad campaigns targeting immediate needs.",
+        "res": "15 - 30 High-Quality Leads/mo"
+      },
+      "s3": {
+        "title": "3. Local SEO Dominance",
+        "desc": "Optimize your Google Business Profile to rank in the \\\"Map Pack\\\" for organic searches, capturing free traffic from competitors.",
+        "res": "+40% Organic Call Volume"
+      },
+      "s4": {
+        "title": "4. AI Follow-Up Automation",
+        "desc": "Implement immediate SMS and email follow-ups for every new lead, ensuring 0 leads fall through the cracks due to slow responses.",
+        "res": "Double Your Close Rate"
+      },
+      "cta": {
+        "title": "Want us to build this for you?",
+        "desc": "Let's get on a 15-minute call to discuss how we can implement this exact architecture into your {industry} business.",
+        "btn": "Book Strategy Call"
+      }
+    }
+  },
+  "industryData": {
+    "roofing": {
+      "title": "Roofing Companies",
+      "heroHeadline": "Stop Fighting For Scraps on HomeAdvisor.",
+      "heroSub": "See why typical roofing marketing fails, and how top 1% roofers build automated lead machines.",
+      "problems": "Roofing is highly competitive. Most roofers rely on unpredictable storms, expensive shared leads from Angi/HomeAdvisor, or word-of-mouth that dries up in the off-season.",
+      "doingWrong": [
+        "No conversion funnel—just a basic brochure website.",
+        "Zero 'Emergency Roof Repair Near Me' Google search dominance.",
+        "Buying shared leads that get called by 5 competitors simultaneously.",
+        "No automated follow-up when a homeowner requests a quote."
+      ],
+      "competitors": [
+        "Running hyper-local Google Search campaigns for immediate intent.",
+        "Using AI SMS auto-responders to contact new leads within 60 seconds.",
+        "Driving traffic to dedicated landing pages, not the homepage."
+      ],
+      "metrics": {
+        "avgJobValue": 12000,
+        "avgCloseRate": 30,
+        "monthlyTarget": 100000
+      },
+      "caseStudy": {
+        "visitors": 500,
+        "conversion": 8,
+        "leads": 40,
+        "closeRate": 35,
+        "jobs": 14,
+        "revenue": 168000
+      }
+    },
+    "hvac": {
+      "title": "HVAC & Trades",
+      "heroHeadline": "Dominate Emergency HVAC Calls in Your City.",
+      "heroSub": "While your competitors are missing calls, top HVAC companies are using our AI dispatch funnels to book jobs 24/7.",
+      "problems": "HVAC is a need-it-now business. When a furnace breaks in January, homeowners click the first result. If you aren't visible and responsive in 5 minutes, you lose the job.",
+      "doingWrong": [
+        "Not bidding on high-intent emergency keywords.",
+        "Sending paid traffic to a confusing homepage instead of a booking funnel.",
+        "Missing phone calls after hours with no AI fallback.",
+        "Ignoring Local SEO Map Pack rankings."
+      ],
+      "competitors": [
+        "Ranking #1 in the Google Map Pack for their service area.",
+        "Using an automated calendar booking system directly on the site.",
+        "Retargeting past customers for seasonal tune-ups."
+      ],
+      "metrics": {
+        "avgJobValue": 8000,
+        "avgCloseRate": 40,
+        "monthlyTarget": 150000
+      },
+      "caseStudy": {
+        "visitors": 800,
+        "conversion": 10,
+        "leads": 80,
+        "closeRate": 50,
+        "jobs": 40,
+        "revenue": 320000
+      }
+    },
+    "dental": {
+      "title": "Dental Clinics",
+      "heroHeadline": "Fill Your Chairs With High-Ticket Implant Patients.",
+      "heroSub": "General dentistry pays the bills. High-ticket funnels for Implants and Invisalign generate wealth.",
+      "problems": "Most dentists rely on neighborhood walk-ins and insurance referrals. They compete on price for cleanings instead of building authority for $10k+ cosmetic procedures.",
+      "doingWrong": [
+        "No specific landing pages for high-ticket services (Implants, Veneers).",
+        "Failing to nurture leads who aren't ready to book today.",
+        "No Facebook/Instagram ad presence to generate demand.",
+        "Weak Google Reviews compared to corporate dental competitors."
+      ],
+      "competitors": [
+        "Running educational video ads targeting specific cosmetic insecurities.",
+        "Offering free virtual consultations via automated funnels.",
+        "Having a 12-month email nurture sequence for high-value leads."
+      ],
+      "metrics": {
+        "avgJobValue": 6500,
+        "avgCloseRate": 25,
+        "monthlyTarget": 80000
+      },
+      "caseStudy": {
+        "visitors": 1200,
+        "conversion": 4,
+        "leads": 48,
+        "closeRate": 30,
+        "jobs": 14,
+        "revenue": 91000
+      }
+    },
+    "landscaping": {
+      "title": "Landscaping Companies",
+      "heroHeadline": "Land Premium Commercial & Luxury Residential Contracts.",
+      "heroSub": "Stop competing for $50 lawn cuts. Build a system that attracts $30k+ hardscaping and commercial bids.",
+      "problems": "Landscapers often get stuck doing low-margin maintenance work because they don't know how to digitally target high-net-worth homeowners or commercial property managers.",
+      "doingWrong": [
+        "A portfolio site with bad photos and zero calls-to-action.",
+        "No LinkedIn B2B strategy for commercial contracts.",
+        "Not running targeted ads in affluent zip codes.",
+        "Slow quoting processes that frustrate premium buyers."
+      ],
+      "competitors": [
+        "Using interactive 3D design lead magnets.",
+        "Running Account-Based Marketing (ABM) for commercial contracts.",
+        "Selling the 'transformation' on dedicated hardscaping landing pages."
+      ],
+      "metrics": {
+        "avgJobValue": 25000,
+        "avgCloseRate": 20,
+        "monthlyTarget": 200000
+      },
+      "caseStudy": {
+        "visitors": 400,
+        "conversion": 5,
+        "leads": 20,
+        "closeRate": 25,
+        "jobs": 5,
+        "revenue": 125000
+      }
+    }
+  },
+  "industryPage": {
+    "focus": "Industry Focus:",
+    "heroBtn": "See Your Growth Potential",
+    "problemsTitle": "Why {title} Struggle to Scale",
+    "wrongTitle": "What You Are Doing Wrong",
+    "rightTitle": "What Top 1% Competitors Do",
+    "mathTitle1": "The Mathematical",
+    "mathTitle2": "Opportunity",
+    "mathSub": "Lead generation is just math. Here is what happens when we install our system for your {title}.",
+    "simTitle": "Simulation: New Landing Page Funnel",
+    "traffic": "Monthly Traffic",
+    "conv": "Funnel Conversion Rate",
+    "leads": "Qualified Leads",
+    "close": "Sales Close Rate",
+    "jobs": "New Jobs Booked",
+    "val": "Average Job Value",
+    "newRev": "New Monthly Revenue",
+    "context1": "By replacing a standard website with a high-converting landing page, and driving high-intent traffic via Google Ads and SEO, we instantly increase the ",
+    "context1_bold": "Conversion Rate",
+    "context2": "Then, by utilizing AI automation for instant follow-ups on every lead, we ensure your sales team maximizes the ",
+    "context2_bold": "Close Rate",
+    "secretTitle": "The Secret:",
+    "secretDesc": "You don't need million-dollar ad budgets. You just need a system that converts traffic at 8%+ instead of the industry average 2%."
+  },
+  "seo": {
+    "home_title": "JLAW 360 Marketing | Top SEO & Lead Generation Agency",
+    "home_desc": "Stop losing leads to an invisible online presence. JLAW 360 builds the bridge between your product and your profit with high-converting funnels, SEO, and AI automation.",
+    "keywords": [
+      "SEO agency Montreal",
+      "lead generation services",
+      "sales funnels",
+      "AI automation for business",
+      "bilingual SEO",
+      "digital marketing strategy"
+    ]
   }
 }

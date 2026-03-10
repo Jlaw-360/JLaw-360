@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle, Activity, Loader, Crosshair, Target } from "lucide-react";
+import { ArrowRight, CheckCircle, Activity, Loader, Crosshair, Target, Shield } from "lucide-react";
 
 export default function BrandRealityCheck() {
   const [step, setStep] = useState(0);

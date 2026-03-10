@@ -10,5 +10,5 @@ export default async function Page({
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
 
-  return <HomeClient dict={dict.hero} lang={lang} />;
+  return <HomeClient dict={dict} lang={lang} />;
 }

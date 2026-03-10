@@ -5,7 +5,8 @@
     "about": "À Propos",
     "niches": "Niches",
     "portal": "Portail",
-    "audit_btn": "Audit Gratuit"
+    "audit_btn": "Audit Gratuit",
+    "realityCheck": "Diagnostic"
   },
   "hero": {
     "badge": "Protocole 2026 Actif",
@@ -103,5 +104,356 @@
     "cta_title": "Prêt à dominer votre marché ?",
     "cta_subtitle": "Réservez un audit complet de votre écosystème actuel (Valeur: 500$ - Offert).",
     "cta_btn": "Demander Mon Audit"
+  },
+  "homePage": {
+    "hero": {
+      "badge": "Plateforme d'Acquisition Interactive pour Services",
+      "h1_1": "Transformez Votre Entreprise",
+      "h1_2": "En Machine à Leads",
+      "sub": "Découvrez combien de revenus votre entreprise perd sans un système d'acquisition adéquat. Arrêtez de deviner et commencez à dominer votre marché local.",
+      "btn_calc": "Calculer les Revenus Perdus",
+      "btn_strategy": "Générer une Stratégie"
+    },
+    "industries": {
+      "badge": "Solutions Spécialisées",
+      "title_1": "Conçu Pour Les",
+      "title_2": "Niches d'Élite",
+      "items": [
+        {
+          "title": "Entreprises de Toiture",
+          "desc": "Chasse aux tempêtes & domination du SEO local."
+        },
+        {
+          "title": "Plomberie & Chauffage (CVC)",
+          "desc": "Appels d'urgence & répartition automatisée."
+        },
+        {
+          "title": "Cliniques Dentaires",
+          "desc": "Implants haute-valeur & tunnels de conversion."
+        },
+        {
+          "title": "Aménagement Paysager",
+          "desc": "Contrats commerciaux & projets résidentiels de luxe."
+        }
+      ]
+    },
+    "pain_points": {
+      "title_1": "Pourquoi Vos Concurrents",
+      "title_2": "Vous Volent Vos Contrats",
+      "sub": "La plupart des entreprises de services dépendent du bouche-à-oreille ou des répertoires dépassés. Voici exactement où votre tunnel perd de l'argent.",
+      "items": [
+        {
+          "title": "Site Web Sans Optimisation",
+          "desc": "Votre site ressemble à une brochure au lieu d'un représentant commercial actif 24/7."
+        },
+        {
+          "title": "Zéro Domination Locale",
+          "desc": "Vous ne vous classez pas pour 'Urgence [Service]' lorsque les clients en ont besoin."
+        },
+        {
+          "title": "Temps de Réponse Trop Lent",
+          "desc": "Si vous n'appelez pas un lead web dans les 5 minutes, les taux de conclusion chutent de 80%. Aucune automatisation."
+        },
+        {
+          "title": "Achat de Leads Partagés",
+          "desc": "Payer des plateformes pour un prospect qui est revendu à 5 concurrents en même temps."
+        }
+      ],
+      "solution_title": "Nous Réparons Les Failles.",
+      "solution_items": [
+        "Pages de Capture Sur Mesure",
+        "Suivis IA Instantanés (SMS & Email)",
+        "Leads Exclusifs à Haute Intention"
+      ]
+    },
+    "footer_cta": {
+      "title_1": "Prêt à Dominer",
+      "title_2": "Votre Marché Local ?",
+      "sub": "Ne rivalisez plus sur les prix. Associez-vous à une agence qui bâtit des systèmes d'acquisition prévisibles.",
+      "btn": "Réserver Votre Appel Stratégique"
+    }
+  },
+  "calculator": {
+    "badge": "Calculateur de ROI Interactif",
+    "title_1": "Découvrez Combien de Revenus Vous",
+    "title_2": "Perdez",
+    "sub": "Entrez vos chiffres actuels ci-dessous pour voir ce qui se passe lorsque vous installez un système d'acquisition optimisé.",
+    "labels": {
+      "visitors": "Visiteurs Mensuels du Site Web",
+      "convRate": "Taux de Conversion (Site Web)",
+      "closeRate": "Taux de Conclusion des Leads",
+      "jobValue": "Valeur Moyenne du Contrat"
+    },
+    "currentSys": {
+      "title": "Votre Système Actuel",
+      "leads": "Leads Mensuels",
+      "clients": "Nouveaux Clients",
+      "clients_per_mo": " /mois",
+      "monthlyRev": "Revenus Mensuels :"
+    },
+    "jlawSys": {
+      "badge": "Système JLAW 360",
+      "title": "Avec Tunnel Optimisé",
+      "leads": "Leads Mensuels",
+      "clients": "Nouveaux Clients",
+      "clients_per_mo": " /mois",
+      "monthlyRev": "Revenus Mensuels :"
+    },
+    "reveal": {
+      "text1": "En réparant votre tunnel d'acquisition, vous pourriez générer jusqu'à",
+      "text2": "De Revenus Perdus Chaque Année",
+      "btn": "Réparer Mon Flux d'Acquisition"
+    }
+  },
+  "generator": {
+    "landing": {
+      "title_1": "Ne Devinez Plus.",
+      "title_2": "Obtenez Votre",
+      "title_3": "Plan de Croissance Sur Mesure.",
+      "sub": "Répondez à 5 questions rapides sur votre entreprise et nous générerons instantanément l'architecture marketing digitale exacte pour dominer votre marché.",
+      "btn": "Générer Ma Stratégie"
+    },
+    "steps": {
+      "step": "Étape",
+      "of": "sur 5",
+      "back": "Retour",
+      "continue": "Continuer",
+      "analyzing": "Analyse du marché {industry} à {city}...",
+      "analyzing_sub": "Compilation de votre plan digital en cours selon vos revenus et objectifs.",
+      "start_over": "Recommencer"
+    },
+    "q1": {
+      "title": "Quel est votre secteur principal ?",
+      "options": [
+        "Toiture",
+        "CVC & Plomberie",
+        "Dentaire",
+        "Aménagement Paysager",
+        "Autre Service"
+      ]
+    },
+    "q2": {
+      "title": "Quelle ville ciblez-vous ?",
+      "placeholder": "ex: Montréal, QC"
+    },
+    "q3": {
+      "title": "Quel est votre revenu mensuel actuel ?",
+      "options": [
+        "Moins de 10k$/mois",
+        "10k$ - 50k$/mois",
+        "50k$ - 150k$/mois",
+        "150k$+/mois"
+      ]
+    },
+    "q4": {
+      "title": "D'où proviennent la plupart de vos leads aujourd'hui ?",
+      "options": [
+        "Références (Bouche-à-oreille)",
+        "Achats de Leads Partagés",
+        "Publicités Google",
+        "Organique / SEO Local",
+        "Réseaux Sociaux"
+      ]
+    },
+    "q5": {
+      "title": "Quel est votre objectif principal pour les 12 prochains mois ?",
+      "options": [
+        "Obtenir des prospects plus constants",
+        "Améliorer la qualité des contrats",
+        "Automatiser mon processus de vente",
+        "Franchir le prochain palier de revenus"
+      ]
+    },
+    "result": {
+      "badge": "Prêt pour l'Implémentation",
+      "title": "Votre Plan Digital Sur Mesure",
+      "desc_start": "Basé sur votre objectif de ",
+      "desc_mid": ", voici l'architecture exacte recommandée pour votre entreprise de ",
+      "desc_end": " à ",
+      "proj": "Résultat Projeté",
+      "s1": {
+        "title": "1. Tunnel Optimisé pour la Conversion",
+        "desc": "Remplacez votre site web classique par une page de capture à réponse directe conçue spécifiquement pour convertir le trafic de {city} en rendez-vous.",
+        "res": "+120% de Taux de Conversion"
+      },
+      "s2": {
+        "title": "2. Google Ads Ultra-Ciblées",
+        "desc": "Capturez les recherches locales telles que \\\"{industry} près de chez moi à {city}\\\" avec des campagnes ciblant les besoins urgents.",
+        "res": "15 - 30 Leads Exclusifs/mois"
+      },
+      "s3": {
+        "title": "3. Domination SEO Local",
+        "desc": "Optimisez votre profil Google My Business pour vous classer dans le \\\"Pack Local\\\" lors des recherches organiques.",
+        "res": "+40% d'Appels Organiques"
+      },
+      "s4": {
+        "title": "4. Automatisation des Suivis",
+        "desc": "Déployez un suivi SMS et courriel instantané pour chaque nouveau prospect, vous assurant de ne perdre aucune vente par manque de rapidité.",
+        "res": "Taux de Conclusion Doublé"
+      },
+      "cta": {
+        "title": "Voulez-vous que nous construisions cela pour vous ?",
+        "desc": "Planifions un appel de 15 minutes pour discuter de l'intégration de cette architecture à votre entreprise.",
+        "btn": "Réserver l'Appel Stratégique"
+      }
+    }
+  },
+  "industryData": {
+    "roofing": {
+      "title": "Entreprises de Toiture",
+      "heroHeadline": "Cessez de Vous Battre pour des Miettes sur HomeAdvisor.",
+      "heroSub": "Découvrez pourquoi le marketing traditionnel en toiture échoue et comment le top 1 % construit des machines à leads automatisées.",
+      "problems": "Le secteur de la toiture est hyper compétitif. La majorité dépendent des tempêtes, achètent des leads partagés ultra chers ou comptent sur le bouche-à-oreille qui s'assèche hors saison.",
+      "doingWrong": [
+        "Pas de tunnel de conversion—juste un site vitrine de base.",
+        "Zéro domination SEO pour 'Réparation toiture urgence près de moi'.",
+        "Achat de leads partagés appelés par 5 concurrents en même temps.",
+        "Aucun suivi automatisé lorsqu'un propriétaire demande une soumission."
+      ],
+      "competitors": [
+        "Campagnes de recherche Google hyper-locales pour l'intention immédiate.",
+        "Suivi SMS par IA pour contacter les leads en moins de 60 secondes.",
+        "Trafic dirigé vers des pages de capture dédiées, pas la page d'accueil."
+      ],
+      "metrics": {
+        "avgJobValue": 12000,
+        "avgCloseRate": 30,
+        "monthlyTarget": 100000
+      },
+      "caseStudy": {
+        "visitors": 500,
+        "conversion": 8,
+        "leads": 40,
+        "closeRate": 35,
+        "jobs": 14,
+        "revenue": 168000
+      }
+    },
+    "hvac": {
+      "title": "Plomberie & Chauffage (CVC)",
+      "heroHeadline": "Dominez les Appels d'Urgence dans Votre Ville.",
+      "heroSub": "Pendant que vous manquez des appels, les leaders du CVC utilisent nos tunnels de répartition IA pour booker des contrats 24/7.",
+      "problems": "Le CVC est un besoin immédiat. Quand une chaudière lâche en janvier, le client clique sur le premier résultat. Si vous n'êtes pas visible et réactif en 5 minutes, vous perdez le contrat.",
+      "doingWrong": [
+        "Absence d'enchères sur les mots-clés d'urgence à haute intention.",
+        "Trafic payant envoyé sur une page d'accueil déroutante au lieu d'un tunnel de réservation.",
+        "Appels manqués en dehors des heures d'ouverture sans relais IA.",
+        "Ignorer le classement local Google My Business (Map Pack)."
+      ],
+      "competitors": [
+        "Classement #1 dans le Map Pack Google pour leur zone de service.",
+        "Système de réservation calendrier automatisé directement sur le site.",
+        "Retargeting des anciens clients pour les entretiens saisonniers."
+      ],
+      "metrics": {
+        "avgJobValue": 8000,
+        "avgCloseRate": 40,
+        "monthlyTarget": 150000
+      },
+      "caseStudy": {
+        "visitors": 800,
+        "conversion": 10,
+        "leads": 80,
+        "closeRate": 50,
+        "jobs": 40,
+        "revenue": 320000
+      }
+    },
+    "dental": {
+      "title": "Cliniques Dentaires",
+      "heroHeadline": "Remplissez Vos Chaises avec des Patients Implants à Haute Valeur.",
+      "heroSub": "La dentisterie générale paie les factures. Les tunnels pour implants et Invisalign créent la richesse.",
+      "problems": "La plupart des dentistes comptent sur le quartier et les assurances. Ils rivalisent sur les prix pour des nettoyages au lieu de bâtir une autorité pour les procédures cosmétiques à 10 000$+.",
+      "doingWrong": [
+        "Aucune page de capture dédiée aux services chers (Implants, Facettes).",
+        "Échec de l'entretien des leads non prêts à réserver aujourd'hui.",
+        "Pas de présence publicitaire Facebook/Instagram pour créer la demande.",
+        "Faibles avis Google comparés aux cliniques concurrentes."
+      ],
+      "competitors": [
+        "Publicités vidéo éducatives ciblant les insécurités cosmétiques spécifiques.",
+        "Consultations virtuelles gratuites via des tunnels automatisés.",
+        "Séquence de relance par courriel sur 12 mois pour les leads à haute valeur."
+      ],
+      "metrics": {
+        "avgJobValue": 6500,
+        "avgCloseRate": 25,
+        "monthlyTarget": 80000
+      },
+      "caseStudy": {
+        "visitors": 1200,
+        "conversion": 4,
+        "leads": 48,
+        "closeRate": 30,
+        "jobs": 14,
+        "revenue": 91000
+      }
+    },
+    "landscaping": {
+      "title": "Aménagement Paysager",
+      "heroHeadline": "Décrochez des Contrats Commerciaux et Résidentiels de Luxe.",
+      "heroSub": "Ne rivalisez plus pour des tontes à 50$. Concevez un système attirant des projets d'aménagement à 30 000$+.",
+      "problems": "Les paysagistes restent souvent bloqués dans l'entretien à faible marge car ils ignorent comment cibler numériquement les propriétaires fortunés ou les gestionnaires commerciaux.",
+      "doingWrong": [
+        "Un site portfolio avec de mauvaises photos et aucun appel à l'action.",
+        "Aucune stratégie LinkedIn B2B pour les contrats commerciaux.",
+        "Aucune publicité ciblée dans les codes postaux aisés.",
+        "Processus de soumission lent qui frustre les acheteurs premium."
+      ],
+      "competitors": [
+        "Utilisation de maquettes 3D interactives comme aimant à prospects.",
+        "Marketing B2B ciblé (ABM) pour les contrats commerciaux.",
+        "Vendre la 'transformation' sur des pages de capture dédiées à l'aménagement de luxe."
+      ],
+      "metrics": {
+        "avgJobValue": 25000,
+        "avgCloseRate": 20,
+        "monthlyTarget": 200000
+      },
+      "caseStudy": {
+        "visitors": 400,
+        "conversion": 5,
+        "leads": 20,
+        "closeRate": 25,
+        "jobs": 5,
+        "revenue": 125000
+      }
+    }
+  },
+  "industryPage": {
+    "focus": "Focus Industrie :",
+    "heroBtn": "Découvrez Votre Potentiel de Croissance",
+    "problemsTitle": "Pourquoi Les {title} Peinent à Scaler",
+    "wrongTitle": "Ce Que Vous Faites Mal",
+    "rightTitle": "Ce Que le Top 1% Fait",
+    "mathTitle1": "L'Opportunité",
+    "mathTitle2": "Mathématique",
+    "mathSub": "L'acquisition de leads n'est qu'une affaire de mathématiques. Voici ce qu'il se passe lorsque nous installons notre système pour votre entreprise.",
+    "simTitle": "Simulation : Nouveau Tunnel de Capture",
+    "traffic": "Trafic Mensuel",
+    "conv": "Taux de Conversion du Tunnel",
+    "leads": "Leads Qualifiés",
+    "close": "Taux de Conclusion des Ventes",
+    "jobs": "Nouveaux Contrats Obtenus",
+    "val": "Valeur Moyenne du Contrat",
+    "newRev": "Nouveaux Revenus Mensuels",
+    "context1": "En remplaçant un site web standard par une page de capture à haute conversion, et en attirant un trafic à forte intention via Google Ads et le SEO, nous augmentons instantanément le ",
+    "context1_bold": "Taux de Conversion",
+    "context2": "Ensuite, grâce à l'automatisation IA pour des suivis instantanés de chaque prospect, nous nous assurons que votre équipe de vente maximise le ",
+    "context2_bold": "Taux de Conclusion",
+    "secretTitle": "Le Secret :",
+    "secretDesc": "Vous n'avez pas besoin d'un budget publicitaire colossal. Vous avez juste besoin d'un système qui convertit à 8%+ au lieu de la moyenne de 2% de l'industrie."
+  },
+  "seo": {
+    "home_title": "JLAW 360 Marketing | Agence de Génération de Leads & SEO",
+    "home_desc": "Cessez de perdre des prospects. JLAW 360 construit le pont entre votre produit et vos profits avec des tunnels de vente, du SEO bilingue et l'automatisation IA.",
+    "keywords": [
+      "Agence SEO Montréal",
+      "génération de leads",
+      "tunnels de vente",
+      "automatisation IA",
+      "SEO bilingue",
+      "stratégie marketing digital"
+    ]
   }
 }

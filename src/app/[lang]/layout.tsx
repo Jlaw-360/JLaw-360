@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import LeadMagnetModal from "@/components/LeadMagnetModal";
 import ChatWidget from "@/components/ChatWidget";
 import "../globals.css";
+import { getDictionary } from "@/i18n/get-dictionary";
+import type { Locale } from "@/i18n/config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -12,47 +14,45 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: "JLAW 360 Marketing | Top SEO & Lead Generation Agency",
-  description:
-    "Stop losing leads to an invisible online presence. JLAW 360 builds the bridge between your product and your profit with high-converting funnels, SEO, and AI automation.",
-  keywords: [
-    "SEO agency Montreal",
-    "lead generation services",
-    "sales funnels",
-    "AI automation for business",
-    "bilingual SEO",
-    "digital marketing strategy",
-  ],
-  openGraph: {
-    title: "JLAW 360 Marketing | AI-Powered Growth Agency",
-    description: "Stop losing leads to an invisible online presence. We build the bridge between your product and your profit.",
-    url: "https://jlaw360.com",
-    siteName: "JLAW 360",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "JLAW 360 Marketing",
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as Locale);
+  
+  return {
+    title: dict.seo?.home_title || "JLAW 360 Marketing",
+    description: dict.seo?.home_desc || "Stop losing leads to an invisible online presence.",
+    keywords: dict.seo?.keywords || ["SEO agency Montreal"],
+    openGraph: {
+      title: dict.seo?.home_title,
+      description: dict.seo?.home_desc,
+      url: `https://app.jlaw360marketing.com/${lang}`,
+      siteName: "JLAW 360",
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "JLAW 360 Marketing",
+        },
+      ],
+      locale: lang === "fr" ? "fr_CA" : "en_CA",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.seo?.home_title,
+      description: dict.seo?.home_desc,
+      images: ["/og-image.jpg"],
+    },
+    alternates: {
+      canonical: `https://app.jlaw360marketing.com/${lang}`,
+      languages: {
+        'en': `https://app.jlaw360marketing.com/en`,
+        'fr': `https://app.jlaw360marketing.com/fr`,
       },
-    ],
-    locale: "en_CA",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "JLAW 360 Marketing",
-    description: "AI automation and high-converting funnels.",
-    images: ["/og-image.jpg"],
-  },
-  alternates: {
-    canonical: "https://jlaw360.com",
-  },
-};
-
-import { getDictionary } from "@/i18n/get-dictionary";
-import type { Locale } from "@/i18n/config";
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
