@@ -467,5 +467,26 @@
     "btn_signup": "Demander l'Autorisation",
     "btn_google": "Continuer avec Google",
     "secure": "Connexion Sécurisée Établie"
+  },
+  "dashboard": {
+    "portal": "Portail",
+    "auth_id": "ID Connexion:",
+    "terminate": "Fermer la Session",
+    "welcome_title": "Bon retour.",
+    "welcome_desc": "Votre moteur de croissance algorithmique est en marche.",
+    "active_funnels": "Tunnels Actifs",
+    "deployed_today": "+1 Déployé Aujourd'hui",
+    "captured_leads": "Leads Capturés",
+    "vs_last_week": "vs Semaine Dernière",
+    "system_status": "Statut du Système",
+    "online": "En Ligne & Actif",
+    "chart_title": "Vélocité d'Acquisition (7 Derniers Jours)",
+    "leads_generated": "Leads Générés",
+    "recent_leads": "CRM Leads Récents",
+    "col_email": "Courriel Prospect",
+    "col_method": "Source d'Acquisition",
+    "col_speed": "Vitesse de Réponse",
+    "col_date": "Date de Capture",
+    "no_leads": "Aucun lead capturé pour le moment. Le système est armé."
   }
 }
