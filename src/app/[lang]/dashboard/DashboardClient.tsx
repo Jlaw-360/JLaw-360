@@ -3,7 +3,7 @@
 import React, { useMemo } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { format, subDays, parseISO, startOfDay, isSameDay } from 'date-fns'
-import { Activity, Users, Database, Mail, Zap, Clock, Calendar } from 'lucide-react'
+import { Activity, Users, Database, Mail, Zap, Clock, Calendar, FileText } from 'lucide-react'
 
 type Lead = {
   id: string
@@ -213,6 +213,22 @@ export default function DashboardClient({ leads, dict }: DashboardClientProps) {
                  )}
                </tbody>
             </table>
+         </div>
+      </div>
+
+      {/* Performance Reports & Communications */}
+      <div className="mt-8 cyber-glass rounded-2xl border border-gray-800 relative z-10 shadow-2xl p-6 sm:p-8">
+         <div className="flex items-center gap-3 mb-2">
+            <FileText size={20} className="text-[var(--color-teal)]" />
+            <h2 className="text-lg font-bold text-white tracking-wide">{dict.dashboard?.reports_title || "Performance Reports & Communications"}</h2>
+         </div>
+         <p className="text-sm font-mono text-gray-400 mb-6">{dict.dashboard?.reports_desc || "Secure inbox for your monthly ROI reports and strategic updates from the JLAW 360 team."}</p>
+         
+         <div className="bg-black/40 border border-gray-800 rounded-xl p-8 text-center flex flex-col items-center justify-center min-h-[150px]">
+            <div className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center opacity-50 mb-3 bg-gray-900">
+               <Mail size={18} className="text-gray-400" />
+            </div>
+            <p className="text-gray-500 font-mono text-sm">{dict.dashboard?.no_reports || "No secure communications received yet."}</p>
          </div>
       </div>
     </>

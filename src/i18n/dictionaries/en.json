@@ -463,8 +463,8 @@
     "email_placeholder": "executive@company.com",
     "pass_label": "Secure Passkey",
     "pass_placeholder": "••••••••••••",
-    "btn_login": "Initialize Session",
-    "btn_signup": "Request Authorization",
+    "btn_login": "Log In (Existing Clients)",
+    "btn_signup": "Create Account (New Clients)",
     "btn_google": "Continue with Google",
     "secure": "Secure Connection Established"
   },
@@ -487,6 +487,9 @@
     "col_method": "Acquisition Source",
     "col_speed": "Speed to Lead",
     "col_date": "Capture Date",
-    "no_leads": "No leads captured yet. The system is armed."
+    "no_leads": "No leads captured yet. The system is armed.",
+    "reports_title": "Performance Reports & Communications",
+    "reports_desc": "Secure inbox for your monthly ROI reports and strategic updates from the JLAW 360 team.",
+    "no_reports": "No secure communications received yet."
   }
 }
