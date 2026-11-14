@@ -2,6 +2,16 @@ import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
+function isSafeRedirectUrl(url: string, origin: string): boolean {
+  if (!url) return false
+  try {
+    const parsed = new URL(String(url).replace(/[\t\n\r]/g, ''), origin)
+    return parsed.origin === origin && (parsed.protocol === 'http:' || parsed.protocol === 'https:')
+  } catch {
+    return false
+  }
+}
+
 export async function GET(request: Request) {
   const requestUrl = new URL(request.url)
   const code = requestUrl.searchParams.get('code')
@@ -32,7 +42,8 @@ export async function GET(request: Request) {
     
     if (!error) {
       // Successful login, redirect to original destination or home
-      return NextResponse.redirect(new URL(next, requestUrl.origin))
+      const destination = isSafeRedirectUrl(next, requestUrl.origin) ? next : '/'
+      return NextResponse.redirect(new URL(destination, requestUrl.origin))
     }
   }
 
